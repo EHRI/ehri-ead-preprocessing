@@ -3,6 +3,9 @@ package eu.ehri.add_ehri_ids_to_ead_nodes;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.xml.stream.FactoryConfigurationError;
 import javax.xml.stream.XMLEventFactory;
@@ -26,6 +29,9 @@ public class App {
 		String eadfile = args[0];
 		String outputfile = eadfile.replace(".xml", "_ehriID.xml");
 
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		
 		FileInputStream fileInputStreamEAD = new FileInputStream(eadfile);
 		XMLOutputFactory factory = XMLOutputFactory.newInstance();
 		XMLEventWriter writer = factory.createXMLEventWriter(new FileWriter(
@@ -43,6 +49,33 @@ public class App {
 		while (xmlEventReaderEAD.hasNext()) {
 			XMLEvent event = xmlEventReaderEAD.nextEvent();
 			writer.add(event);
+			
+			if (event.isStartElement()) {
+				if (event.asStartElement().getName().getLocalPart()
+						.equals("revisiondesc")) {
+					writer.add(end);
+					writer.add(eventFactory.createStartElement("", null,
+							"change"));
+					writer.add(end);
+					writer.add(eventFactory.createStartElement("", null,
+							"date"));
+					writer.add(eventFactory.createCharacters(dateFormat.format(date)));
+					writer.add(eventFactory.createEndElement("", null,
+							"date"));
+					writer.add(end);
+					writer.add(eventFactory.createStartElement("", null,
+							"item"));
+					writer.add(eventFactory
+							.createCharacters("EHRI added a unitid with label \"ehri_internal_identifier\" to give every node a unique"
+									+ " id."));
+					writer.add(eventFactory.createEndElement("", null,
+							"item"));
+					writer.add(end);
+					writer.add(eventFactory.createEndElement("", null,
+							"change"));
+				}
+			}
+			
 			if (event.isStartElement()) {
 				if (event.asStartElement().getName().getLocalPart()
 						.equals("archdesc")) {

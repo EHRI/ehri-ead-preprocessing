@@ -9,6 +9,14 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.XMLEvent;
 
+
+/**
+ * Check whether <head> tag is present in the EAD
+ * 
+ * @author Kepa J. Rodriguez (https://github.com/KepaJRodriguez)
+ */
+
+
 public class LookForHead {
 
 	public static boolean hasHeadTag(String eadfile) throws FileNotFoundException, XMLStreamException, FactoryConfigurationError{
