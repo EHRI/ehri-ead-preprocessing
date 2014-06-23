@@ -48,13 +48,21 @@ public class DetectIdentifier {
 				} else {
 
 					if (event.asStartElement().getName().getLocalPart()
-							.equals("unitid")) {
-						@SuppressWarnings("unchecked")
-						Iterator<Attribute> attributes = event.asStartElement()
-								.getAttributes();
-						if (!attributes.hasNext()) {
-							identifier = "UNITID";
-						}
+							.equals("unitid")) {identifier = "UNITID";
+//						@SuppressWarnings("unchecked")
+//						Iterator<Attribute> attributes = event.asStartElement()
+//								.getAttributes();
+//						if (!attributes.hasNext()) {
+//							identifier = "UNITID";
+//						}
+//						if (attributes.hasNext()){
+//							while (attributes.hasNext()) {
+//								if (attributes.next().getName().toString().equals("Bestandssignatur")) {
+//									identifier = "UNITID";
+//								}
+//							}
+//
+//						}
 					}
 
 				}
