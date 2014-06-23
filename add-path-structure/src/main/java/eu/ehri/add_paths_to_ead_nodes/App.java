@@ -3,6 +3,9 @@ package eu.ehri.add_paths_to_ead_nodes;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.xml.stream.FactoryConfigurationError;
 import javax.xml.stream.XMLEventFactory;
@@ -33,10 +36,17 @@ public class App {
 
 		XMLEventReader xmlEventReaderEAD = XMLInputFactory.newInstance()
 				.createXMLEventReader(fileInputStreamEAD);
-		
+
 		XMLEvent end = eventFactory.createDTD("\n");
 
+		boolean hasrevdesc = LookForRevisiondesc.hasRevisiondesc(eadfile);
 		boolean hashead = LookForHeadTag.hasHeadTag(eadfile);
+
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date));
+
 		
 		String node = "";
 		String top = "0";
@@ -54,11 +64,78 @@ public class App {
 		int cntC12 = -1;
 		boolean toplevel = false;
 
-		
 		while (xmlEventReaderEAD.hasNext()) {
 			XMLEvent event = xmlEventReaderEAD.nextEvent();
 			writer.add(event);
 
+			if (hasrevdesc == true) {
+				if (event.isStartElement()) {
+					if (event.asStartElement().getName().getLocalPart()
+							.equals("revisiondesc")) {
+						node = "revisiondesc";
+						writer.add(end);
+						writer.add(eventFactory.createStartElement("", null,
+								"change"));
+						writer.add(end);
+						writer.add(eventFactory.createStartElement("", null,
+								"date"));
+						writer.add(eventFactory.createCharacters(dateFormat.format(date)));
+						writer.add(eventFactory.createEndElement("", null,
+								"date"));
+						writer.add(end);
+						writer.add(eventFactory.createStartElement("", null,
+								"item"));
+						writer.add(eventFactory
+								.createCharacters("EHRI added a unitid with label \"ehri_structure\" to indicate the "
+										+ "structure of the EAD file on every c-node. This is done to make comparisons"
+										+ " of two versions of the same EAD (as indicated by the eadid) possible."));
+						writer.add(eventFactory.createEndElement("", null,
+								"item"));
+						writer.add(end);
+						writer.add(eventFactory.createEndElement("", null,
+								"change"));
+						writer.add(end);
+					}
+				}
+			}
+
+			if (hasrevdesc == false) {
+				if (event.isEndElement()) {
+					if (event.asEndElement().getName().getLocalPart()
+							.equals("filedesc")) {
+						writer.add(end);
+						writer.add(eventFactory.createStartElement("", null,
+								"revisiondesc"));
+						writer.add(end);
+						writer.add(eventFactory.createStartElement("", null,
+								"change"));
+						writer.add(end);
+						writer.add(eventFactory.createStartElement("", null,
+								"date"));
+						writer.add(eventFactory.createCharacters(dateFormat.format(date)));
+						writer.add(eventFactory.createEndElement("", null,
+								"date"));
+						writer.add(end);
+						writer.add(eventFactory.createStartElement("", null,
+								"item"));
+						writer.add(eventFactory
+								.createCharacters("EHRI added a unitid with label \"ehri_structure\" to indicate the "
+										+ "structure of the EAD file on every c-node. This is done to make comparisons"
+										+ " of two versions of the same EAD (as indicated by the eadid) possible."));
+						writer.add(eventFactory.createEndElement("", null,
+								"item"));
+						writer.add(end);
+						writer.add(eventFactory.createEndElement("", null,
+								"change"));
+						writer.add(end);
+						writer.add(eventFactory.createEndElement("", null,
+								"revisiondesc"));
+					}
+				}
+			}
+			
+			
+			
 			if (event.isStartElement()) {
 				if (event.asStartElement().getName().getLocalPart()
 						.equals("archdesc")) {
@@ -66,7 +143,6 @@ public class App {
 					toplevel = true;
 				}
 			}
-			
 
 			if (event.isEndElement()) {
 				if (event.asEndElement().getName().getLocalPart().equals("did")) {
@@ -190,7 +266,7 @@ public class App {
 							.createEndElement("", null, "unitid"));
 				}
 			}
-				
+
 			if (event.isStartElement()) {
 				if (event.asStartElement().getName().getLocalPart()
 						.equals("did")
