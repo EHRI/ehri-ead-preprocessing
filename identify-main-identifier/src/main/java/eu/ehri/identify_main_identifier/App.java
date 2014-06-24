@@ -7,21 +7,17 @@ import javax.xml.stream.XMLStreamException;
 
 /**
  * Detect the kind of identifier used for each node and
- * if it exist, sadd it as main EHRI identifier 
+ * if it exist, add it as main EHRI identifier 
  * 
  * @author Kepa J. Rodriguez (https://github.com/KepaJRodriguez)
  */
 
 public class App {
 	public static void main(String[] args) throws XMLStreamException, FactoryConfigurationError, IOException {
-		System.out.println("Hello World!");
 		String eadfile = args[0];
 
 		String identifier = DetectIdentifier.detectIdentifier(eadfile);
-		System.out.println();
-		System.out.println("DETECTED");
-		System.out.println("Identifier is " + identifier);
-		System.out.println();
+		System.out.printf("Identifier is %s (%s)\n", identifier, eadfile);
 		
 		if (identifier.equals("DID_ID")){
 			UseDID_ID_Label.use_did_label(eadfile);
