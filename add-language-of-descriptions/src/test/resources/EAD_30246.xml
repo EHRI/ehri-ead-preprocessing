@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" audience="external">  
+    <eadheader countryencoding="iso3166-1" dateencoding="iso8601" findaidstatus="unverified-full-draft" langencoding="iso639-2b" repositoryencoding="iso15511" scriptencoding="iso15924"> 
+        <eadid>30246</eadid>
+        <filedesc>
+            <titlestmt>
+                <titleproper>Beschrijving van de collectie LIRO</titleproper>
+            </titlestmt>
+            <publicationstmt>
+                <publisher>Stadsarchief Amsterdam</publisher>
+            </publicationstmt>
+        </filedesc>
+    </eadheader>
+    <archdesc level="collection">
+        <did id="NL-SAA-4304636">
+            <head>Overzicht</head>
+            <unitid label="Toegangsnummer">30246</unitid>
+            <unittitle label="Naam">Collectie LIRO</unittitle>
+            <unitdate label="Datering">20e eeuw</unitdate>
+            <langmaterial>dut</langmaterial>
+            <repository>
+                <corpname>Stadsarchief Amsterdam</corpname>
+            </repository>
+            <origination label="Vormers">
+                <corpname>Lippmann, Rosenthal en Co.</corpname>
+            </origination>
+        </did>
+        <odd>
+            <head>Inleiding</head>
+            <p> Deze collectie afkomstig uit de bescheiden van de 'roofbank' Lippmann, Rosenthal en
+                Co (LIRO) bestaat uit één dossier en is niet openbaar </p>
+        </odd>
+        <dsc>
+            <head>Inventaris</head>
+        </dsc>
+    </archdesc>
+</ead>

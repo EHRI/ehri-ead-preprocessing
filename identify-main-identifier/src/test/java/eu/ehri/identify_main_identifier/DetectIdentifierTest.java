@@ -20,7 +20,7 @@ public class DetectIdentifierTest {
     @Test
     public void testDetectIdentifier() throws Exception {
         URL url = ClassLoader.getSystemResource("EAD_30246.xml");
-        System.out.println(url);
+//        System.out.println(url);
         String did = DetectIdentifier.detectIdentifier(url.getPath());
         assertEquals("DID_ID", did);
     }
