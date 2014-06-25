@@ -42,13 +42,15 @@ public class DetectIdentifier {
 					while (attributes.hasNext()) {
 						if (attributes.next().getName().toString().equals("id")) {
 							identifier = "DID_ID";
+                                                        return identifier;
 						}
 					}
 						
 				} else {
 
 					if (event.asStartElement().getName().getLocalPart()
-							.equals("unitid")) {identifier = "UNITID";
+							.equals("unitid")) {
+                                            identifier = "UNITID";
 //						@SuppressWarnings("unchecked")
 //						Iterator<Attribute> attributes = event.asStartElement()
 //								.getAttributes();
