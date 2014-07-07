@@ -65,6 +65,8 @@ public class ExactlyOneMainIdentifier {
         XMLEventWriter writer = factory.createXMLEventWriter(outputWriter);
         XMLEvent end = eventFactory.createDTD("\n");
         
+        String eadid = "";
+        
         resetMainIdValues();
 
         XMLEventReader xmlEventReaderEAD = XMLInputFactory.newInstance().createXMLEventReader(fileInputStreamEAD);
@@ -101,7 +103,7 @@ public class ExactlyOneMainIdentifier {
                                     //otherwise, use the given label
                                     unitWriter.add(eventFactory.createAttribute(LABEL, type));
                                     if (type.equals(INTERNALID)) {
-                                        internalIdentifier = event.asCharacters().toString();
+                                        internalIdentifier = eadid + event.asCharacters().toString();
                                     }
                                 }
                                 unitWriter.add(event.asCharacters());
@@ -117,6 +119,16 @@ public class ExactlyOneMainIdentifier {
                     //last write to temporary unitwriter, back to the normal one (if we were indeed writing to the unitwriter ...)
                 } else {
                     writer.add(event);
+                    if(event.asStartElement().getName().getLocalPart().equals("eadid")) {
+                        event = xmlEventReaderEAD.nextEvent();
+                        eadid = event.asCharacters().getData() + "_";
+                        //the agreement is to append #LANGUAGE to the eadid, to be able to create multiple language descriptions. 
+                        //the eadid leading up to the # should be the same for two descriptions of the same documentaryUnit
+                        if(eadid.indexOf("#") > 0){
+                            eadid = eadid.substring(0, eadid.indexOf("#")) + "_";
+                        }
+                        writer.add(event);
+                    } else
                     if (event.asStartElement().getName().getLocalPart().equals("revisiondesc")) {
                         writer.add(end);
                         writer.add(eventFactory.createStartElement("", null, "change"));
