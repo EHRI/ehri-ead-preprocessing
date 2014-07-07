@@ -41,7 +41,7 @@ public class DetectIdentifier {
 							.getAttributes();
 					while (attributes.hasNext()) {
 						if (attributes.next().getName().toString().equals("id")) {
-							identifier = "DID_ID";
+							identifier = App.DID;
                                                         return identifier;
 						}
 					}
@@ -50,7 +50,7 @@ public class DetectIdentifier {
 
 					if (event.asStartElement().getName().getLocalPart()
 							.equals("unitid")) {
-                                            identifier = "UNITID";
+                                            identifier = App.UNITID;
 //						@SuppressWarnings("unchecked")
 //						Iterator<Attribute> attributes = event.asStartElement()
 //								.getAttributes();

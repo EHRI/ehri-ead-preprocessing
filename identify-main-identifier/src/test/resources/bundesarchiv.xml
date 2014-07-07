@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead xmlns="urn:isbn:1-931666-22-9">
+  <eadheader>
+    <eadid countrycode="DE"/>
+    <filedesc>
+      <titlestmt>
+        <titleproper/>
+        <author>Bundesarchiv</author>
+      </titlestmt>
+    </filedesc>
+    <profiledesc>
+      <creation>
+                    Bundesarchiv from Basys2
+                    <date>17.06.2013 13:06</date></creation>
+      <langusage>
+        <language langcode="ger" scriptcode="Latn">German</language>
+      </langusage>
+    </profiledesc>
+    <revisiondesc>
+      <change>
+        <date>2014/06/16 18:50:07</date>
+        <item>EHRI added a unitid with label "ehri_internal_identifier" to give every node an unique id.</item>
+      </change>
+      <change>
+        <date>2014/06/16 18:48:11</date>
+        <item>EHRI added a unitid with label "ehri_main_identifier" to indicate the identifier provided by the institution that EHRI will use as the identifier of the unit.</item>
+      </change>
+      <change>
+        <date>2014/06/16 18:46:11</date>
+        <item>EHRI added a unitid with label "ehri_structure" to indicate the structure of the EAD file on every c-node. This is done to make comparisons of two versions of the same EAD (as indicated by the eadid) possible.</item>
+      </change>
+      <change>
+        <date calendar="gregorian" era="ce">2014-06-13T16:19:20.597+02:00</date>
+        <item>preprocessing transformation</item>
+      </change>
+    </revisiondesc>
+  </eadheader>
+  <frontmatter/>
+  <archdesc level="fonds">
+    <did>
+      <unitid label="ehri_internal_id">0</unitid>
+      <unitid label="ehri_structure">0</unitid>
+      <unitid encodinganalog="Bestandssignatur">RW 47</unitid>
+      <unittitle encodinganalog="Bestandsbezeichnung">Kommandant des Führerhauptquartiers</unittitle>
+      <unitdate encodinganalog="Bestandslaufzeit">1939/45</unitdate>
+      <unittitle encodinganalog="Langbezeichnung">Kommandant des Führerhauptquartiers</unittitle>
+      <unittitle encodinganalog="Kurzbezeichnung"/>
+      <unitdate encodinganalog="Provenienzlaufzeit">1939/45</unitdate>
+      <physdesc>
+        <extent>74 AE1,8 lfm</extent>
+        <genreform>Schriftgut</genreform>
+      </physdesc>
+      <unitid label="ehri_main_identifier">RW 47</unitid>
+    </did>
+    <scopecontent encodinganalog="Inhaltliche_Charakterisierung">
+      <p>Die Kriegstagebücher (Nr. 1 bis 6) des Kommandanten des FHQ reichen vom 23. August1939 bis zum 15. Juli 1942. Sie enthalten u.a. Angaben zu Begegnungen mit Mussolini und anderen ausländischen Politikern sowie zur Erkundung und zum Ausbau der Hauptquartiere. Darüber hinaus sind Unterlagen vom Stenographischen Dienst im FHQ überliefert, diese beinhalten Fragmente von Lage- und anderen Besprechungen Hitlers (52 Archivalieneinheiten). Nur sieben Akten beziehen sich auf die Organisation und Unterbringung. In diesem Bestand befindet sich ebenfalls das Kriegstagebuch der Kampfgruppe Nähring, welche sich aus Teilen des Führer-Begleit-Bataillons zusammensetzte; sie war zeitweise im Rahmen der 16. und 18. Armee in Nordrussland eingesetzt (September 1941 bis April 1942).</p>
+    </scopecontent>
+    <descgrp encodinganalog="Bestandsbeschreibung">
+      <p>Zwischen 1939 und 1945 entstanden nahezu 20 verbunkerte "Führerhauptquartiere"(FHQ). Das bekannteste FHQ lag östlich von Rastenburg in Ostpreußen und trug den Tarnnamen "Wolfsschanze"; darüber hinaus existierten die Anlagen "Adlerhorst", "Felsennest", "Waldwiese", "Tannenberg", "Wolfsschlucht", "Wolfsschlucht 2", "Askania Mitte" (Anlage Mitte), Askania Süd (Anlage Süd), "Eichenhain" ("Werwolf"), "Bärenhöhle", "Wasserburg" und "Hagen" ("Siegfried"). In diesem Zusammenhang zu erwähnen ist auch der Berghof auf dem "Obersalzberg" und die Reichskanzlei.</p>
+      <p/>
+      <p> Am Ende des Krieges befanden sich weitere Vorhaben im Bau, die Erkundung zusätzlicher geeigneter Plätze war zum Teil abgeschlossen (unvollendete Anlagen: "Olga", "W3", "Zigeuner", "Maybach I" und "Maybach II,"Zeppelin", "Riese" und "S III").</p>
+      <p> Das FHQ war Hitlers Befehlsstelle während des Krieges. Den Polen- und Jugoslawienfeldzug beobachtete Hitler noch vom "Führersonderzug" aus, für den Frankreichfeldzug, die Abwehr einer alliierten Invasion an der Atlantikküste und den Krieg gegen die Sowjetunion befahl er den Bau fester Hauptquartiere. Der Standort des FHQ wechselte mit der jeweiligen Bedeutung des Kriegsschauplatzes im Osten oder im Westen. Der Kommandant des FHQ war für Unterbringung, inneren Dienst und Sicherheit des Hauptquartiers sowie des "Führersonderzuges" verantwortlich.</p>
+    </descgrp>
+    <processinfo encodinganalog="Erschließungszustand">
+      <p>Online-Findbuch</p>
+    </processinfo>
+    <relatedmaterial encodinganalog="Verwandtes_Archivgut_im_BArch">
+      <p>Die Niederschriften über Hitlers Tischgespräche im Führerhauptquartier, die im Auftrag des Leiters der Parteikanzlei von dessen Adjutanten Ministerialrat Heim und Regierungsrat Dr. Picker angefertigt wurden, befinden sich in Privatbesitz (eine authentische Abschrift des Manuskripts von Picker befindet sich im Bundesarchiv-Abteilung R: Kl. Erw. 441). Sie liegen mittlerweile auch gedruckt als Publikationen vor.</p>
+    </relatedmaterial>
+    <bibliography encodinganalog="Literatur">
+      <p>Sekundärliteratur</p>
+      <p/>
+      <p> Seidler, Franz W. und Zeigert, Dieter: Die Führerhauptquartiere. Anlagen und Planungen im Zweiten Weltkrieg. München 2000</p>
+      <p> Buch, Gerhard: Das Führerhauptquartier. Seine Darstellung in der deutschen Literatur. In: Jahresbibliographie der Bibliothek für Zeitgeschichte 38 (1966), S. 549 </p>
+      <p> Hartlaub, Felix: Im Sperrkreis. Aufzeichnungen aus dem Zweiten Weltkrieg Hrsg. von Geno Hartlaub; 2. Aufl. Hamburg 1955 </p>
+      <p> Hoffmann, Peter: Die Sicherheit des Diktators. Hitlers Leibwachen, Schutzmaßnahmen, Residenzen, Hauptquartiere. München/Zürich 1975</p>
+      <p> Picker, Henry: Hitlers Tischgespräche im Führerhauptquartier 1941/42. Bonn 1951</p>
+      <p> Jochmann, Werner (Hrsg.): Monologe im Führerhauptquartier 1941-1944. München 1980</p>
+      <p> Heiber, Helmut (Hrsg.): Lagebesprechungen im Führerhauptquartier. Stuttgart 1962</p>
+    </bibliography>
+    <controlaccess>
+      <subject>Norddeutscher Bund und Deutsches Reich (1867/1871-1945)</subject>
+      <subject>Militär</subject>
+      <subject>Reichswehr und Wehrmacht 1919 bis 1945</subject>
+      <subject>Zentrale Einrichtungen der Reichswehr und der Wehrmacht</subject>
+      <subject>Weitere nachgeordnete Einrichtungen</subject>
+    </controlaccess>
+    <processinfo>
+      <p>this fonds was selected by EHRI from their holding
+                                                        guide, based on date range and subject</p>
+    </processinfo>
+  </archdesc>
+</ead>

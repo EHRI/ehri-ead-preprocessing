@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead relatedencoding="MARC21">
+  <eadheader audience="internal" langencoding="ISO 639-2" findaidstatus="EDITED-FULL-DRAFT" id="a0">
+    <eadid systemid="CEGESOMA_173461" source="Studie- en Documentatiecentrum Oorlog en Hedendaagse Maatschappij" encodinganalog="852">CEGESOMA_173461</eadid>
+    <filedesc>
+      <titlestmt>
+        <titleproper>Jodenvereniging in Belgi&#235;</titleproper>
+        <subtitle>Inventaris "Archief Jodenvereniging in Belgi&#235;"</subtitle>
+        <author>Automatisch gegenereerd door PALLAS systeem</author>
+      </titlestmt>
+      <publicationstmt>
+        <publisher>Studie- en Documentatiecentrum Oorlog en Hedendaagse Maatschappij</publisher>
+        <date>09/01/2014</date>
+        <address>Luchtvaartsquare 29 - 1070 Brussel (Belgi&#235;)</address>
+      </publicationstmt>
+    </filedesc>
+    <profiledesc>
+       <creation><date>09/01/2014</date>Automatisch gegenereerd door PALLAS systeem</creation>
+       <langusage>N</langusage>
+    </profiledesc>
+  </eadheader>
+  <archdesc level="fonds" langmaterial="In het Frans en Nederlands" type="inventory">
+    <did id="a1">
+      <head>Archief Jodenvereniging in Belgi&#235;</head>
+      <repository encodinganalog="852$a" label="Depot:"><addressline>Luchtvaartsquare 29 - 1070 Brussel (Belgi&#235;)</addressline>Studie- en Documentatiecentrum Oorlog en Hedendaagse Maatschappij</repository>
+      <origination label="Vormer:">
+        <corpname encodinganalog="110">Jodenvereniging in Belgi&#235;</corpname>
+      </origination>
+      <unittitle encodinganalog="245$a" label="Titel:">Archief Jodenvereniging in Belgi&#235;</unittitle>
+      <unitdate type="inclusive" encodinganalog="245$f" label="Data:">1940-1944</unitdate>
+      <physdesc encodinganalog="300$a" label="Omvang:">7 CD-rom.</physdesc>
+      <unitid encodinganalog="099" countrycode="BE" label="Identificatie:">AA 2249</unitid>
+    </did>
+    <organization encodinganalog="351$a" id="a4">
+      <head>Organisatie</head>
+      <p></p>
+    </organization>
+    <arrangement encodinganalog="351$b" id="a5">
+      <head>Ordening</head>
+      <p></p>
+    </arrangement>
+    <odd encodinganalog="500" id="a11">
+      <head>Algemene Info</head>
+      <p>Berustte bij het NMW/OF, originelen nu bij het Joods Museum van Deportatie en Verzet</p>
+    </odd>
+    <controlaccess id="a12">
+    <head>Onderwerpen</head>
+      <controlaccess>
+      <head>Instellingen, bedrijven, organisaties</head>
+      <corpname encodinganalog="710">Jodenvereniging in Belgi&#235;</corpname>
+      </controlaccess>
+      <controlaccess>
+      <head>Trefwoorden</head>
+      <subject encodinganalog="650">joden--vervolgingen--belgie--1940-1944</subject>
+      </controlaccess>
+      <controlaccess>
+      <head>Titel</head>
+      <title encodinganalog="630">Archief Jodenvereniging in Belgi&#235;</title>
+    </controlaccess>
+    </controlaccess>
+    <admininfo>
+    <custodhist encodinganalog="561" id="a16">
+    <head>Herkomstgeschiedenis</head>
+    <p>Nationaal Museum van de Weerstand/Onafhankelijkheidsfront</p>
+    </custodhist>
+    <altformavail encodinganalog="530" id="a17">
+    <head>Alternatieve fysische vorm</head>
+    <p>Bestand op SOMA-server</p>
+    </altformavail>
+    </admininfo>
+    <dsc id="a23" type="combined">
+<head>Gedetailleerde beschrijving</head>
+    <c01 level="series">
+    <did>
+      <unittitle encodinganalog="245$a" label="Titel:">Archief Jodenvereniging in Belgi&#235;</unittitle>
+      <unitdate type="inclusive" encodinganalog="245$f" label="Data:">1940-1944</unitdate>
+      <physdesc encodinganalog="300$a" label="Omvang:">669 mb</physdesc>
+      <unitid encodinganalog="099" countrycode="BE" label="Identificatie:">AA 2249 / 1</unitid>
+    </did>
+    <organization encodinganalog="351$a" id="a4">
+      <head>Organisatie</head>
+      <p></p>
+    </organization>
+    <arrangement encodinganalog="351$b" id="a5">
+      <head>Ordening</head>
+      <p></p>
+    </arrangement>
+    <odd encodinganalog="500" id="a11">
+      <head>Algemene Info</head>
+      <p>Berustte bij het NMW/OF, originelen nu bij het Joods Museum van Deportatie en Verzet</p>
+    </odd>
+    <admininfo>
+    <custodhist encodinganalog="561" id="a16">
+    <head>Herkomstgeschiedenis</head>
+    <p>Nationaal Museum van de Weerstand/Onafhankelijkheidsfront</p>
+    </custodhist>
+    <altformavail encodinganalog="530" id="a17">
+    <head>Alternatieve fysische vorm</head>
+    <p>Bestand op SOMA-server</p>
+    </altformavail>
+    </admininfo>
+    </c01>
+    <c01 level="series">
+    <did>
+      <unittitle encodinganalog="245$a" label="Titel:">Archief Jodenvereniging in Belgi&#235;</unittitle>
+      <unitdate type="inclusive" encodinganalog="245$f" label="Data:">1940-1944</unitdate>
+      <physdesc encodinganalog="300$a" label="Omvang:">690 Mb</physdesc>
+      <unitid encodinganalog="099" countrycode="BE" label="Identificatie:">AA 2249 / 2</unitid>
+    </did>
+    <organization encodinganalog="351$a" id="a4">
+      <head>Organisatie</head>
+      <p></p>
+    </organization>
+    <arrangement encodinganalog="351$b" id="a5">
+      <head>Ordening</head>
+      <p></p>
+    </arrangement>
+    <odd encodinganalog="500" id="a11">
+      <head>Algemene Info</head>
+      <p>Berustte bij het NMW/OF, originelen nu bij het Joods Museum van Deportatie en Verzet</p>
+    </odd>
+    <admininfo>
+    <custodhist encodinganalog="561" id="a16">
+    <head>Herkomstgeschiedenis</head>
+    <p>Nationaal Museum van de Weerstand/Onafhankelijkheidsfront</p>
+    </custodhist>
+    </admininfo>
+    </c01>
+    <c01 level="series">
+    <did>
+      <unittitle encodinganalog="245$a" label="Titel:">Archief Jodenvereniging in Belgi&#235;</unittitle>
+      <unitdate type="inclusive" encodinganalog="245$f" label="Data:">1940-1944</unitdate>
+      <physdesc encodinganalog="300$a" label="Omvang:">434 Mb</physdesc>
+      <unitid encodinganalog="099" countrycode="BE" label="Identificatie:">AA 2249 / 3</unitid>
+    </did>
+    <organization encodinganalog="351$a" id="a4">
+      <head>Organisatie</head>
+      <p></p>
+    </organization>
+    <arrangement encodinganalog="351$b" id="a5">
+      <head>Ordening</head>
+      <p></p>
+    </arrangement>
+    <odd encodinganalog="500" id="a11">
+      <head>Algemene Info</head>
+      <p>Berustte bij het NMW/OF, originelen nu bij het Joods Museum van Deportatie en Verzet</p>
+    </odd>
+    <admininfo>
+    <custodhist encodinganalog="561" id="a16">
+    <head>Herkomstgeschiedenis</head>
+    <p>Nationaal Museum van de Weerstand/Onafhankelijkheidsfront</p>
+    </custodhist>
+    <altformavail encodinganalog="530" id="a17">
+    <head>Alternatieve fysische vorm</head>
+    <p>Bestand op SOMA-server</p>
+    </altformavail>
+    </admininfo>
+    </c01>
+    <c01 level="series">
+    <did>
+      <unittitle encodinganalog="245$a" label="Titel:">Archief Jodenvereniging in Belgi&#235;</unittitle>
+      <unitdate type="inclusive" encodinganalog="245$f" label="Data:">1940-1944</unitdate>
+      <physdesc encodinganalog="300$a" label="Omvang:">636 Mb</physdesc>
+      <unitid encodinganalog="099" countrycode="BE" label="Identificatie:">AA 2249 / 4</unitid>
+    </did>
+    <organization encodinganalog="351$a" id="a4">
+      <head>Organisatie</head>
+      <p></p>
+    </organization>
+    <arrangement encodinganalog="351$b" id="a5">
+      <head>Ordening</head>
+      <p></p>
+    </arrangement>
+    <odd encodinganalog="500" id="a11">
+      <head>Algemene Info</head>
+      <p>Berustte bij het NMW/OF, originelen nu bij het Joods Museum van Deportatie en Verzet</p>
+    </odd>
+    <admininfo>
+    <custodhist encodinganalog="561" id="a16">
+    <head>Herkomstgeschiedenis</head>
+    <p>Nationaal Museum van de Weerstand/Onafhankelijkheidsfront</p>
+    </custodhist>
+    <altformavail encodinganalog="530" id="a17">
+    <head>Alternatieve fysische vorm</head>
+    <p>Bestand op SOMA-server</p>
+    </altformavail>
+    </admininfo>
+    </c01>
+    <c01 level="series">
+    <did>
+      <unittitle encodinganalog="245$a" label="Titel:">Archief Jodenvereniging in Belgi&#235;</unittitle>
+      <unitdate type="inclusive" encodinganalog="245$f" label="Data:">1940-1944</unitdate>
+      <physdesc encodinganalog="300$a" label="Omvang:">700 MB</physdesc>
+      <unitid encodinganalog="099" countrycode="BE" label="Identificatie:">AA 2249 / 5</unitid>
+    </did>
+    <organization encodinganalog="351$a" id="a4">
+      <head>Organisatie</head>
+      <p></p>
+    </organization>
+    <arrangement encodinganalog="351$b" id="a5">
+      <head>Ordening</head>
+      <p></p>
+    </arrangement>
+    <odd encodinganalog="500" id="a11">
+      <head>Algemene Info</head>
+      <p>Berustte bij het NMW/OF, originelen nu bij het Joods Museum van Deportatie en Verzet</p>
+    </odd>
+    <admininfo>
+    <custodhist encodinganalog="561" id="a16">
+    <head>Herkomstgeschiedenis</head>
+    <p>Nationaal Museum van de Weerstand/Onafhankelijkheidsfront</p>
+    </custodhist>
+    <altformavail encodinganalog="530" id="a17">
+    <head>Alternatieve fysische vorm</head>
+    <p>Bestand op SOMA-server</p>
+    </altformavail>
+    </admininfo>
+    </c01>
+    <c01 level="series">
+    <did>
+      <unittitle encodinganalog="245$a" label="Titel:">Archief Jodenvereniging in Belgi&#235;</unittitle>
+      <unitdate type="inclusive" encodinganalog="245$f" label="Data:">1940-1944</unitdate>
+      <physdesc encodinganalog="300$a" label="Omvang:">522 Mb</physdesc>
+      <unitid encodinganalog="099" countrycode="BE" label="Identificatie:">AA 2249 / 6</unitid>
+    </did>
+    <organization encodinganalog="351$a" id="a4">
+      <head>Organisatie</head>
+      <p></p>
+    </organization>
+    <arrangement encodinganalog="351$b" id="a5">
+      <head>Ordening</head>
+      <p></p>
+    </arrangement>
+    <odd encodinganalog="500" id="a11">
+      <head>Algemene Info</head>
+      <p>Berustte bij het NMW/OF, originelen nu bij het Joods Museum van Deportatie en Verzet</p>
+    </odd>
+    <admininfo>
+    <custodhist encodinganalog="561" id="a16">
+    <head>Herkomstgeschiedenis</head>
+    <p>Nationaal Museum van de Weerstand/Onafhankelijkheidsfront</p>
+    </custodhist>
+    <altformavail encodinganalog="530" id="a17">
+    <head>Alternatieve fysische vorm</head>
+    <p>Bestand op SOMA-server</p>
+    </altformavail>
+    </admininfo>
+    </c01>
+    <c01 level="series">
+    <did>
+      <unittitle encodinganalog="245$a" label="Titel:">Archief Jodenvereniging in Belgi&#235;</unittitle>
+      <unitdate type="inclusive" encodinganalog="245$f" label="Data:">1940-1944</unitdate>
+      <physdesc encodinganalog="300$a" label="Omvang:">268 MB</physdesc>
+      <unitid encodinganalog="099" countrycode="BE" label="Identificatie:">AA 2249 / 7</unitid>
+    </did>
+    <organization encodinganalog="351$a" id="a4">
+      <head>Organisatie</head>
+      <p></p>
+    </organization>
+    <arrangement encodinganalog="351$b" id="a5">
+      <head>Ordening</head>
+      <p></p>
+    </arrangement>
+    <odd encodinganalog="500" id="a11">
+      <head>Algemene Info</head>
+      <p>Berustte bij het NMW/OF, originelen nu bij het Joods Museum van Deportatie en Verzet</p>
+    </odd>
+    <admininfo>
+    <custodhist encodinganalog="561" id="a16">
+    <head>Herkomstgeschiedenis</head>
+    <p>Nationaal Museum van de Weerstand/Onafhankelijkheidsfront</p>
+    </custodhist>
+    <altformavail encodinganalog="530" id="a17">
+    <head>Alternatieve fysische vorm</head>
+    <p>Bestand op SOMA-server</p>
+    </altformavail>
+    </admininfo>
+    </c01>
+    </dsc>
+  </archdesc>
+</ead>
