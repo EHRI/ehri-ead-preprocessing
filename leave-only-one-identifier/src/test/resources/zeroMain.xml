@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet TYPE="text/xsl" href="http://pallas.cegesoma.be/ead/res/cs4Nie.xsl"?>
+<ead relatedencoding="MARC21">
+  <eadheader id="a0" langencoding="ISO 639-2" audience="internal" findaidstatus="EDITED-FULL-DRAFT">
+    <eadid systemid="CEGESOMA_160202" encodinganalog="852" source="Studie- en Documentatiecentrum Oorlog en Hedendaagse Maatschappij">CEGESOMA_160202#NLD</eadid>
+    <filedesc>
+      <titlestmt>
+        <titleproper>Samson Heller</titleproper>
+        <subtitle>Inventaris "Onderzoeksarchief Samson Heller mbt diverse aspecten van WOI en WOII"</subtitle>
+        <author>Cege Soma</author>
+      </titlestmt>
+      <publicationstmt>
+        <publisher>Studie- en Documentatiecentrum Oorlog en Hedendaagse Maatschappij</publisher>
+        <date>09/01/2014</date>
+        <address>Luchtvaartsquare 29 - 1070 Brussel (België)</address>
+      </publicationstmt>
+    </filedesc>
+    <profiledesc>
+       <creation><date>09/01/2014</date>Automatisch gegenereerd door PALLAS systeem</creation>
+       <langusage><language>nld</language></langusage>
+    </profiledesc>
+  <revisiondesc>
+<change>
+<date>2014/07/06 21:57:22</date>
+<item>EHRI added a unitid with label ehri_main_identifier to indicate the identifier provided by the institution that EHRI will use as the identifier of the unit.</item></change><change><date>06-07-2014</date><item>Deze toegang is voorbewerkt door EHRI met behulp van https://github.com/EHRI/ehri-ead-preprocessing/commit/c1e1265a8b8dfb446e33738051a255d3d61277f6</item>
+</change>
+<change>
+<date>2014/07/06 21:55:00</date>
+<item>EHRI added a unitid with label "ehri_internal_identifier" to give every node a unique id.</item>
+</change>
+<change>
+<date>2014/07/06 21:53:12</date>
+<item>EHRI added a unitid with label "ehri_structure" to indicate the structure of the EAD file on every c-node. This is done to make comparisons of two versions of the same EAD (as indicated by the eadid) possible.</item>
+</change>
+<change><date>06-07-2014</date><item>Deze toegang is voorbewerkt door EHRI met behulp van https://github.com/EHRI/ehri-ead-preprocessing/commit/c1e1265a8b8dfb446e33738051a255d3d61277f6. De volgende wijzigingen zijn aangebracht: (1) language gewijzigd naar ISO-639-2. (2) eadid heeft suffix met taal-aanduiding (om onderscheid tussen fre/nld beschrijving van dezelfde toegang mogelijk te maken) (3) author aangepast. hier stond ten onrechte Pallas. Dit is naar de creation verplaatst. author=Cege Soma</item></change></revisiondesc></eadheader>
+  <archdesc level="fonds" langmaterial="In het Frans en Duits." type="inventory">
+    <did id="a1">
+      <head>Onderzoeksarchief Samson Heller mbt diverse aspecten van WOI en WOII</head>
+<unitid label="ehri_internal_id">12</unitid>
+<unitid label="ehri_structure">34</unitid>
+      <repository encodinganalog="852$a" label="Depot:"><addressline>Luchtvaartsquare 29 - 1070 Brussel (België)</addressline>Studie- en Documentatiecentrum Oorlog en Hedendaagse Maatschappij</repository>
+      <origination label="Vormer:">
+        <persname encodinganalog="100">Samson Heller</persname>
+      </origination>
+      <unittitle encodinganalog="245$a" label="Titel:">Onderzoeksarchief Samson Heller mbt diverse aspecten van WOI en WOII</unittitle>
+      <unitdate encodinganalog="245$f" label="Data:" type="inclusive">1980-</unitdate>
+      <physdesc encodinganalog="300$a" label="Omvang:">3 dozen</physdesc>
+
+    </did>
+  </archdesc>
+</ead>

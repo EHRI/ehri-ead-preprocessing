@@ -13,7 +13,8 @@
         <module>add-path-structure</module>
         <module>add-language-of-descriptions</module>
         <module>identify-main-identifier</module>
-    </modules>
+        <module>leave-only-one-identifier</module>
+  </modules>
     <dependencyManagement>
         <dependencies>
             <dependency>
