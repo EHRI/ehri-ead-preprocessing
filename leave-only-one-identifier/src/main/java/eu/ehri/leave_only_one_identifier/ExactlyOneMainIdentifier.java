@@ -92,8 +92,8 @@ public class ExactlyOneMainIdentifier {
                     event = xmlEventReaderEAD.nextEvent();
                     while (attributes.hasNext()) {
                         Attribute attribute = attributes.next();
+                        String type = attribute.getValue().toString(); //value of the attribute
                         if (attribute.getName().toString().equals(LABEL)) {
-                            String type = attribute.getValue().toString(); //value of the attribute
                             if (event instanceof Characters) {
                                 if (type.equals(MAINID)) {
                                     //write this unitid with a different label
@@ -106,14 +106,16 @@ public class ExactlyOneMainIdentifier {
                                         internalIdentifier = eadid + event.asCharacters().toString();
                                     }
                                 }
-                                unitWriter.add(event.asCharacters());
-                                
                             }
                         } else {
                             //not a LABEL
                             unitWriter.add(eventFactory.createAttribute(attribute.getName().toString(), attribute.getValue().toString()));
                         }
                     }
+                    if (event instanceof Characters) {
+                        unitWriter.add(event.asCharacters());
+                    }
+
                     event = xmlEventReaderEAD.nextEvent();
                     unitWriter.add(event);
                     //last write to temporary unitwriter, back to the normal one (if we were indeed writing to the unitwriter ...)

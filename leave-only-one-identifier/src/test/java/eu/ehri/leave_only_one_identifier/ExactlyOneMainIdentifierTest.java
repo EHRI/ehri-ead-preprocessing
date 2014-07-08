@@ -43,5 +43,18 @@ public class ExactlyOneMainIdentifierTest {
         assertFalse(writer.toString().contains("<unitid label=\"ehri_main_identifier\">AA 2351</unitid>"));
         assertFalse(writer.toString().contains("<unitid label=\"ehri_multiple_identifier\">AA 2351</unitid>"));
     }
+    
+    @Test
+    public void leaveOriginalIdentifier() throws Exception {
+        URL url = ClassLoader.getSystemResource("its-gestapo.xml");
+//        System.out.println(url);
+        StringWriter writer = new StringWriter();
+
+        ExactlyOneMainIdentifier.leaveOneMainIdentifier(url.getPath(), writer);
+//        System.out.println("_________________________________");
+//        System.out.println(writer.toString());
+        assertTrue(writer.toString().contains("<unitid type=\"bestellnummer\">R 2 10697</unitid>"));
+        assertTrue(writer.toString().contains("<unitid label=\"ehri_main_identifier\">R 2 10697</unitid>"));
+    }
 
 }
