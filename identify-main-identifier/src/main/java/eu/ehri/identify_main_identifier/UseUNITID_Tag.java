@@ -34,10 +34,10 @@ public class UseUNITID_Tag {
     static String kind_of_unitid = null;
 
     /**
-     * Bundesarchiv: <unitid encodinganalog="Bestandssignatur">the unitid given by the institute</unitid> 
-     * 
+     * Bundesarchiv: <unitid encodinganalog="Bestandssignatur">the unitid given by the institute</unitid>
+     *
      * Cegesoma: <unitid label="Identificatie:">the unitid given by the institute</unitid>
-     * 
+     *
      * both will be extended with a <unitid label="ehri_main_identifier">the unitid given by the institute</unitid>
      *
      * @param eadfile the name of the ead file
@@ -51,7 +51,7 @@ public class UseUNITID_Tag {
     public static String use_unitid_tag(String eadfile, String unitidAttribute, String unitidAttributeValue, Writer outputWriter)
             throws XMLStreamException, FactoryConfigurationError, IOException {
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
 
 
@@ -96,7 +96,7 @@ public class UseUNITID_Tag {
                     Iterator<Attribute> attributes = event.asStartElement().getAttributes();
 
                     event = xmlEventReaderEAD.nextEvent();
-                    if (unitidAttribute != null && unitidAttributeValue != null) {
+                    if (unitidAttribute != null && unitidAttributeValue != null && !unitidAttribute.isEmpty() && !unitidAttributeValue.isEmpty()) {
                         while (attributes.hasNext()) {
                             Attribute attribute = attributes.next();
                             //for unitidAttribute && unitidAttributeValue given
@@ -115,15 +115,14 @@ public class UseUNITID_Tag {
                             }
                         }
                     }
-                    if (kind_of_unitid == null) {
-                        event = xmlEventReaderEAD.nextEvent();
-                        writer.add(event);
+                    if (kind_of_unitid == null || kind_of_unitid.equals(NOATTR)) {
                         if (event instanceof Characters) {
                             value = event.asCharacters().toString();
                             kind_of_unitid = NOATTR;
+                            writer.add(event);
+                            event = xmlEventReaderEAD.nextEvent();
+                            writer.add(event);
                         }
-                        event = xmlEventReaderEAD.nextEvent();
-                        writer.add(event);
                     }
                 }
             }
