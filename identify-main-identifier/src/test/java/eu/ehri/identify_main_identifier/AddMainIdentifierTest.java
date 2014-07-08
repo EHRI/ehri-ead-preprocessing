@@ -44,8 +44,11 @@ public class AddMainIdentifierTest {
         
         System.out.println(writer.toString());
         assertTrue(writer.toString().contains("<unitid label=\"ehri_internal_id\">0</unitid>"));
+        assertTrue(writer.toString().contains("<unitid type=\"bestellnummer\">R 2 8687</unitid>"));
+        assertTrue(writer.toString().contains("<unitid label=\"ehri_main_identifier\">R 2 8687</unitid>"));
     }
     @Test
+    @Ignore //TODO!
     public void itsGestapoWithoutParams() throws Exception {
         URL url = ClassLoader.getSystemResource("its-gestapo.xml");
         System.out.println(url);
@@ -55,5 +58,19 @@ public class AddMainIdentifierTest {
         
         System.out.println(writer.toString());
         assertTrue(writer.toString().contains("<unitid label=\"ehri_internal_id\">0</unitid>"));
+        assertTrue(writer.toString().contains("<unitid type=\"bestellnummer\">R 2 8687</unitid>"));
+        assertTrue(writer.toString().contains("<unitid label=\"ehri_main_identifier\">R 2 8687</unitid>"));
+    }
+    @Test
+    public void itsEsterwegen() throws Exception {
+        URL url = ClassLoader.getSystemResource("its-esterwegen.xml");
+        System.out.println(url);
+        StringWriter writer = new StringWriter();
+
+        UseUNITID_Tag.use_unitid_tag(url.getPath(), "", "", writer);
+        
+        System.out.println(writer.toString());
+        assertTrue(writer.toString().contains("<unitid type=\"refcode\">DE ITS [OuS 1.1.7]</unitid>"));
+        assertTrue(writer.toString().contains("<unitid label=\"ehri_main_identifier\">DE ITS [OuS 1.1.7]</unitid>"));
     }
 }
