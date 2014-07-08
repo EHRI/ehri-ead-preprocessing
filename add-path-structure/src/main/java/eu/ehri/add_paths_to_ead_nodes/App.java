@@ -44,12 +44,7 @@ public class App {
 
         boolean hasrevdesc = LookForRevisiondesc.hasRevisiondesc(eadfile);
         boolean hashead = LookForHeadTag.hasHeadTag(eadfile);
-
-
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = new Date();
-        System.out.println(dateFormat.format(date));
-
+        boolean hasProfileDesc = LookForTag.hasTag(eadfile, "profiledesc");
 
         String node = "";
         String top = "0";
@@ -71,55 +66,32 @@ public class App {
             XMLEvent event = xmlEventReaderEAD.nextEvent();
             writer.add(event);
 
-            if (hasrevdesc == true) {
+            if (hasrevdesc ) {
                 if (event.isStartElement()) {
-                    if (event.asStartElement().getName().getLocalPart()
-                            .equals("revisiondesc")) {
+                    if (event.asStartElement().getName().getLocalPart().equals("revisiondesc")) {
                         node = "revisiondesc";
-                        writer.add(end);
-                        writer.add(eventFactory.createStartElement("", null, "change"));
-                        writer.add(end);
-                        writer.add(eventFactory.createStartElement("", null, "date"));
-                        writer.add(eventFactory.createCharacters(dateFormat.format(date)));
-                        writer.add(eventFactory.createEndElement("", null, "date"));
-                        writer.add(end);
-                        writer.add(eventFactory.createStartElement("", null, "item"));
-                        writer.add(eventFactory
-                                .createCharacters("EHRI added a unitid with label \"ehri_structure\" to indicate the "
-                                + "structure of the EAD file on every c-node. This is done to make comparisons"
-                                + " of two versions of the same EAD (as indicated by the eadid) possible."));
-                        writer.add(eventFactory.createEndElement("", null, "item"));
-                        writer.add(end);
-                        writer.add(eventFactory.createEndElement("", null, "change"));
-                        writer.add(end);
+                        writeProvenance(writer, end, eventFactory);
                     }
                 }
-            }
-
-            if (hasrevdesc == false) {
+            } else if ( ! hasrevdesc  && hasProfileDesc) {
+                if (event.isEndElement()) {
+                    if (event.asEndElement().getName().getLocalPart().equals("profiledesc")) {
+                        writer.add(end);
+                        writer.add(eventFactory.createStartElement("", null, "revisiondesc"));
+                        writeProvenance(writer, end, eventFactory);
+                        writer.add(eventFactory.createEndElement("", null, "revisiondesc"));
+                    }
+                }
+            } else if (! hashead && ! hasProfileDesc){
                 if (event.isEndElement()) {
                     if (event.asEndElement().getName().getLocalPart().equals("filedesc")) {
                         writer.add(end);
                         writer.add(eventFactory.createStartElement("", null, "revisiondesc"));
-                        writer.add(end);
-                        writer.add(eventFactory.createStartElement("", null, "change"));
-                        writer.add(end);
-                        writer.add(eventFactory.createStartElement("", null, "date"));
-                        writer.add(eventFactory.createCharacters(dateFormat.format(date)));
-                        writer.add(eventFactory.createEndElement("", null, "date"));
-                        writer.add(end);
-                        writer.add(eventFactory.createStartElement("", null, "item"));
-                        writer.add(eventFactory
-                                .createCharacters("EHRI added a unitid with label \"ehri_structure\" to indicate the "
-                                + "structure of the EAD file on every c-node. This is done to make comparisons"
-                                + " of two versions of the same EAD (as indicated by the eadid) possible."));
-                        writer.add(eventFactory.createEndElement("", null, "item"));
-                        writer.add(end);
-                        writer.add(eventFactory.createEndElement("", null, "change"));
-                        writer.add(end);
+                        writeProvenance(writer, end, eventFactory);
                         writer.add(eventFactory.createEndElement("", null, "revisiondesc"));
                     }
                 }
+                
             }
 
 
@@ -353,4 +325,29 @@ public class App {
         writer.close();
         xmlEventReaderEAD.close();
     }
+
+    private static void writeProvenance(XMLEventWriter writer, XMLEvent end, XMLEventFactory eventFactory) throws XMLStreamException {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        System.out.println(dateFormat.format(date));
+
+        writer.add(end);
+        writer.add(eventFactory.createStartElement("", null, "change"));
+        writer.add(end);
+        writer.add(eventFactory.createStartElement("", null, "date"));
+        writer.add(eventFactory.createCharacters(dateFormat.format(date)));
+        writer.add(eventFactory.createEndElement("", null, "date"));
+        writer.add(end);
+        writer.add(eventFactory.createStartElement("", null, "item"));
+        writer.add(eventFactory
+                .createCharacters("EHRI added a unitid with label \"ehri_structure\" to indicate the "
+                + "structure of the EAD file on every c-node. This is done to make comparisons"
+                + " of two versions of the same EAD (as indicated by the eadid) possible."));
+        writer.add(eventFactory.createEndElement("", null, "item"));
+        writer.add(end);
+        writer.add(eventFactory.createEndElement("", null, "change"));
+        writer.add(end);
+
+    }
+
 }
