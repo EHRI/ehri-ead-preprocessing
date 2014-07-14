@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead xmlns="urn:isbn:1-931666-22-9">
+  <eadheader>
+    <eadid countrycode="DE"/>
+    <filedesc>
+      <titlestmt>
+        <titleproper/>
+        <author>Bundesarchiv</author>
+      </titlestmt>
+    </filedesc>
+    <profiledesc>
+      <creation> Bundesarchiv from Basys2 <date>17.06.2013 13:06</date></creation>
+      <langusage>
+        <language langcode="ger" scriptcode="Latn">German</language>
+      </langusage>
+    </profiledesc>
+    <revisiondesc>
+      <change>
+        <date>2014/06/16 18:48:16</date>
+        <item>EHRI added a unitid with label "ehri_internal_identifier" to give every node an unique id.</item>
+      </change>
+      <change>
+        <date>2014/06/16 18:46:16</date>
+        <item>EHRI added a unitid with label "ehri_main_identifier" to indicate the identifier provided by the institution that EHRI will use as the identifier of the unit.</item>
+      </change>
+      <change>
+        <date>2014/06/16 18:44:11</date>
+        <item>EHRI added a unitid with label "ehri_structure" to indicate the structure of the EAD file on every c-node. This is done to make comparisons of two versions of the same EAD (as indicated by the eadid) possible.</item>
+      </change>
+      <change>
+        <date calendar="gregorian" era="ce">2014-06-13T16:19:21.917+02:00</date>
+        <item>preprocessing transformation</item>
+      </change>
+    </revisiondesc>
+  </eadheader>
+  <frontmatter/>
+  <archdesc level="fonds">
+    <did>
+      <unitid label="ehri_internal_id">0</unitid>
+      <unitid label="ehri_structure">0</unitid>
+      <unitid encodinganalog="Bestandssignatur">NS 1</unitid>
+      <unittitle encodinganalog="Bestandsbezeichnung">Reichsschatzmeister der NSDAP</unittitle>
+      <unitdate encodinganalog="Bestandslaufzeit">1906/19, 1922/45</unitdate>
+      <unittitle encodinganalog="Langbezeichnung">Reichsschatzmeister der NSDAP</unittitle>
+      <unittitle encodinganalog="Kurzbezeichnung"/>
+      <unitdate encodinganalog="Provenienzlaufzeit">1935/45</unitdate>
+      <physdesc>
+        <extent>3567 AE</extent>
+        <genreform>Schriftgut</genreform>
+      </physdesc>
+      <unitid label="ehri_main_identifier">NS 1</unitid>
+      <physloc encodinganalog="Benutzungsort">Berlin-Lichterfelde</physloc>
+    </did>
+    <descgrp encodinganalog="Bestandsbeschreibung">
+      <p>Bestandsgeschichte</p>
+      <p>Im September/ Oktober 1962 gelangte aus den Sammlungen des ehemaligen Berlin Document Center Berlin u. a. ein großer Bestand an Schriftgut des Reichsschatzmeisters der NSDAP in das Bundesarchiv. Weitere Abgaben durch das Berlin Document Center folgten in den Jahren1978, 1980 und 1988.</p>
+      <p>Im Jahr 2003 wurden vom Bayerischen Hauptstaatsarchiv München 68 Aktenbündel übergeben. Hierbei handelte es sich um Aufnahmeanträge und den Fragebogen als Anlage zum Aufnahmeantrag.</p>
+      <p>Nach wie vor in den personenbezogenen Überlieferungen des ehemaligen Berlin Document Center befinden sich vor allem die zum Bereich des Amtes für Mitgliedschaftswesen gehörende Reichskartei der NSDAP (Zentral- und Gaukartei), die Aufnahmeanträge sowie Vorgänge einzelner Parteimitglieder, u. a. über den Verlust von Mitgliedsbüchern, Beitragszahlungen, Anerkennung früherer Mitgliedschaften etc.</p>
+      <p>Archivische Bewertung und Bearbeitung</p>
+      <p>Nur für einen kleinen Teil waren die Akten durch ein unzulängliches Ablieferungsverzeichnis erschlossen, das als provisorisches Hilfsmittel das vorläufige Findbuch NS 1 bildete. Die überwiegende Masse des Schriftgutes wurde völlig ungeordnet und unerschlossen vom Berlin Document Center abgegeben. Ein Teilbestand - vom BDC als "Vermögens-, Grundstücks- und Rechtsangelegenheiten" betreffen ausgewiesen - wurde1968 geordnet und durch Herrn Gregor Verlande verzeichnet.</p>
+      <p>Die erste Gliederung des Bestandes ergab sich aus der Organisation der Dienststelle des Reichsschatzmeisters der NSDAP. Die umfasste seit 1937 das Amt des Stabsleiters, die Hauptämter I - VIII sowie zwei Sonderbeauftragte, seit 1939 außerdem das aus dem Hauptamt I ausgegliederte Amt für Lotteriewesen und den Amtsarzt der Reichsleitung.</p>
+      <p>Die Akten aus dem Zugang des BDC stammen aus den Bereichen des Stabsleiters sowie der Hauptämter I, II, IV, V und VII. Es handelt sich dabei durchweg nur um verhältnismäßig geringe Bestandteile der in den einzelnen Ämtern entstandenen Akten mit Ausnahme der Akten des Hauptamtes V. Dieser größte Teil besteht aus Akten über die Vermögensverwaltung der NSDAP. Solche Akten entstanden beim Stabsleiter sowie in den Hauptämter I, III und V. Den Hauptanteil daran haben Akten des Hauptamtes V über die Verwaltung der parteieigenen Grundstücke, Gebäude und Heime. Hierbei handelt es sich nicht nur um Liegenschaften, die von der NSDAP käuflich bzw. durch Schenkung erworben oder gemietet wurden, sondern auch um solche, die aus beschlagnahmtem und in die NSDAP eingewiesenem jüdischen Besitz innerhalb des Reichsgebietes oder feindlichen Besitz in den vor und während des zweiten Weltkrieges eingegliederten und besetzten Gebieten stammen. In einer kleineren Aktenuntergruppe findet die Verwaltung vornehmlich des in die NSDAP eingewiesenen beweglichen Vermögens aufgelöster Vereine und sonstiger Organisationen in den eingegliederten und besetzten Gebieten Niederschlag. Ergänzendes findet sich in entsprechenden Bänden des Hauptamtes I und des Stabsleiters, bei letzterem außerdem ein unvollständiges Verzeichnis der Grundstücke der NSDAP.</p>
+      <p>Die Akten des Hauptamtes III enthalten Vermögensübersichten der Gaue, Kreise und Ortsgruppen der NSDAP für die Zeit von Dezember 1936 bis Dezember 1938. Neben Jahres- und Monatsbilanzen ist auch der Parteimitgliederstand der Gaue und Kreise monatlich angegeben, so dass für die Jahre 1937 und 1938 das Anwachsen der NSDAP in den Gauen und Kreisen zu verfolgen ist. </p>
+      <p>Kassiert wurden zum damaligen Zeitpunkt Buchungsbelege der Zentralbuchhaltung in der Zentral,- Kassen- und Vermögensverwaltung des Hauptamtes I.</p>
+      <p>Im Zuge der weiteren Abgaben durch das Berlin Document Center erfolgte eine Überarbeitung des Bestandes 1988. Die Verzeichnung fiel jedoch hinsichtlich vieler verschiedener Bearbeiter so unterschiedlich aus, so dass die Fertigstellung eines Findbuches zunächst zurückgestellt wurde.</p>
+      <p>Mit einer kompletten Neubearbeitung des Bestandes, einschließlich der bereits 1293 verzeichneten Archivalieneinheiten wurde im Jahr 2009 begonnen. Die bestehende Klassifikation nach dem Organisationsplan des Reichsschatzmeisters wurde übernommen und nur gering verändert. Die einzelnen Hauptämter haben im Wesentlichen nach dem Aktenplan gearbeitet, so dass eine Zuordnung der Akten, sofern diese noch im Ursprungszustand überliefert waren, innerhalb der Klassifikation relativ unproblematisch war. Schwieriger gestaltete sich die Zuordnung bei den Akten, die vom BDC übernommen wurden. Es  wurden im BDC Akten größtenteils nach dem Pertinenzprinzip neu gebildet, so dass gerade im Bereich des Amtes für Mitgliedschaftswesen Schriftgut sowohl aus dem Schieds-, dem Kartei- und dem Aufnahmeamt in einer Akten zu finden sind.  Da die Akten aber bereits in Benutzung waren, wurde auf eine Neuordnung einzelner Akten, auch aus Zeitgründen verzichtet. Lediglich zu umfangreiche Akten wurden getrennt.</p>
+      <p>Die Verzeichnung der Akten erfolgte in Anwendung der gültigen  Erschließungsrichtlinien für das Bundesarchiv und schloss Korrekturen (Nominalstil, gültige Grammatik- und Rechtschreibregeln) bzw. die Anpassung der Titel (häufig Kürzungen) entsprechend der systemtechnischen Möglichkeiten in  der Datenbank BASYS S ein.</p>
+      <p>Abkürzungen</p>
+      <p>a. D.		außer Dienst</p>
+      <p>b.		bei</p>
+      <p>BDM		Bund Deutscher Mädel</p>
+      <p>DAF		Deutsche Arbeitsfront</p>
+      <p>Dr.		Doktor</p>
+      <p>d. R. 		der Reserve</p>
+      <p>e. V.		eingetragener Verein</p>
+      <p>E. Z.		Einlagezahl</p>
+      <p>HJ		Hitlerjugend</p>
+      <p>HZD		Hilfszug Bayern</p>
+      <p>i. L. 		in Liquidation</p>
+      <p>Jg.		Jahrgang</p>
+      <p>Krs.		Kreis</p>
+      <p>NSDAP	Nationalsozialistische Deutsche Arbeiterpartei</p>
+      <p>NSKK		NS-Kraftfahrkorps</p>
+      <p>o. Dat.		ohne Datum</p>
+      <p>OS		Oberschlesien</p>
+      <p>Prof.		Professor</p>
+      <p>RAD		Reichsarbeitsdienst</p>
+      <p>RJF		Reichsjugendführung</p>
+    </descgrp>
+    <processinfo encodinganalog="Erschließungszustand">
+      <p>Online-Findbuch (2011)</p>
+    </processinfo>
+    <bibliography encodinganalog="Amtliche_Druckschriften">
+      <p>Besoldungs- und Versorgungsblatt der NSDAP. Parteiamtliches Mitteilungsblatt für die vom Reichsschatzmeister der NSDAP herausgegebenen vermögensrechtlichen Personalbestimmungen,</p>
+      <p> Mitteilungsblatt der Reichszeugmeisterei der NSDAP, 1934 ff.</p>
+    </bibliography>
+    <bibliography encodinganalog="Literatur">
+      <p>Lingg, Anton: Die Verwaltung der Nationalsozialistischen Arbeiterpartei, München 1939.</p>
+      <p> Ulf Lükeman: Der Reichsschatzmeister der NSDAP. Ein Beitrag zur inneren Parteistruktur, Diss. phil., Berlin 1963.</p>
+      <p> Inventar archivalischer Quellen des NS-Staates, hrsg. von Heinz Boberach, München 1991/1995, Teil 1, S. 461-463.</p>
+      <p> The Holdings of the Berlin Document Center. A Guide to the Collections, Berlin Document Center (im Buchhandel nicht erhältlich), 1994, S. 115-128.</p>
+      <p>Diether Degreif Franz: Xaver Schwarz. Das Reichsschatzmeisteramt der NSDAP, 1989.</p>
+      <p>Wolfgang Benz (Hrsg.): Wie wurde man Parteigenosse, 2009.</p>
+    </bibliography>
+    <bioghist>
+      <p>Die Funktion des Reichsschatzmeisters wurde bereits in der Satzung der NSDAP von 1926 verankert. Als Vorsitzender des Finanzausschusses der Partei war er verantwortlich für das gesamte Kassenwesen sowie die Sicherung der finanziellen Grundlagen der "Bewegung".</p>
+      <p> 1931 durch Verfügung Hitlers bevollmächtigt zur Wahrnehmung und Vertretung aller Wirtschafts-, Finanz-, Vermögens- und Rechtsangelegenheiten der Partei; zuständig auch für alle Fragen des Mitgliedschaftswesens. Ihm unterstand die gesamte Finanz- und Verwaltungsorganisation.</p>
+      <p>Dienststellen, die dem Reichsschatzmeister unterstanden und/ oder über die er die Finanzhoheit ausübte:</p>
+      <p>I. Partei</p>
+      <p>1. Reichsleitungsdienststellen</p>
+      <p>Zentralkassen- und Vermögensverwaltung</p>
+      <p>Amt für Lotteriewesen</p>
+      <p>Reichszeugmeisterei</p>
+      <p>Hilfszug Bayern</p>
+      <p>Verpflegungsbetriebe der Reichsleitung</p>
+      <p>Reichsautozug Deutschland</p>
+      <p>Reichsorganisationsleitung</p>
+      <p>Reichspropagandaleitung</p>
+      <p>Verwaltungsleitung der Organisationsleitung der Reichsparteitage</p>
+      <p>Ortsgruppe Braunes Haus</p>
+      <p>Sektion Reichsleitung</p>
+      <p>Adolf-Hitler Schulen</p>
+      <p>Hohe Schulen</p>
+      <p>Reichsschule Feldafing</p>
+      <p>Reichslager Bad Tölz</p>
+      <p>2. Reichsdienststellen</p>
+      <p>Kanzlei des Führers</p>
+      <p>Parteikanzlei Nußdorf</p>
+      <p>Reichspressestelle</p>
+      <p>Dienststellen des Reichsleiters Rosenberg einschließlich Weltdienst Frankfurt/M.</p>
+      <p>Reichsamt für das Landvolk</p>
+      <p>Rassenpolitisches Amt</p>
+      <p>Amt für Sippenforschung</p>
+      <p>NS-Schrifttum</p>
+      <p>Parteiverbindungsstelle Prag</p>
+      <p>3. Sondereinrichtungen der Reichsleitung</p>
+      <p>- Reichspropagandaleitung: Deutsche Filmherstellungs- und Verwertungs-GmbH, Institut für Deutsche Kultur- und Wirtschaftspropaganda, Deutsche Kulturpropaganda GmbH, Dr. Goebbels Rundfunkspende, Reichszentralstelle Gemeinderundfunk</p>
+      <p>- Wirtschaftsbetriebe der Reichsleitung: Hotelbetriebs-GmbH "Der Deutsche Hof" Nürnberg, Hotelbetriebs-GmbH "Berchtesgadener Hof", Berchtesgaden</p>
+      <p>4. Gauleitungen, Kreise und Ortsgruppen</p>
+      <p>NSDAP Gaue</p>
+      <p>NSDAP Kreise</p>
+      <p>NSDAP Ortsgruppen</p>
+      <p>NSDAP Gau- und Kreisschulen</p>
+      <p>Auslandsorganisation</p>
+      <p>Landesgruppe Norwegen</p>
+      <p>Arbeitsbereich Niederlande einschließlich Bezirksstellen</p>
+      <p>Arbeitsbereich Generalgouvernement einschließlich Distrikte</p>
+      <p>Arbeitsbereich Ostland einschließlich Bezirksstellen</p>
+      <p>5. Sondereinrichtungen der Gauleitungen</p>
+      <p>Parteiforum Bayreuth</p>
+      <p>Münchener Großveranstaltungen</p>
+      <p>Gemeinschaftshaus München-Oberbayern</p>
+      <p>6. Besondere Dienststellen</p>
+      <p>Germanische Leitstelle einschließlich Inlands- und Auslandsdienststellen</p>
+      <p>Volksdeutsche Mittelstelle einschließlich Inlands- und Auslandsdienststellen</p>
+      <p>II. Gliederungen</p>
+      <p>NSD-Dozentenbund</p>
+      <p>NS-Frauenschaft einschließlich Reichsfrauenführung, Gaufrauenschaften und NS-Frauenwarte</p>
+      <p>NSD-Studentenbund</p>
+      <p>SA</p>
+      <p>SS</p>
+      <p>NS-Kraftfahrkorps</p>
+      <p>Hitlerjugend</p>
+      <p>III. Angeschlossene Verbände</p>
+      <p>Deutscher Ärztebund</p>
+      <p>NS-Kriegsopferversorgung</p>
+      <p>Reichsbund der Deutschen Beamten</p>
+      <p>NS-Lehrerbund</p>
+      <p>NS-Rechtswahrerbund</p>
+      <p>NS-Bund Deutscher Technik einschließlich Schule Plessenburg</p>
+      <p>NS-Volkswohlfahrt</p>
+      <p>Ernährungshilfswerk</p>
+      <p>NS-Bund Deutscher Schwestern</p>
+      <p>Winterhilfswerk des Deutschen Volkes</p>
+      <p>Deutsche Arbeitsfront</p>
+      <p>Kraft durch Freude</p>
+      <p>IV. Sonstige Organisationen</p>
+      <p>NS-Altherrenbund</p>
+      <p>Arbeitsgemeinschaft für Kameradschaftshäuser</p>
+      <p>Deutsche Volksgemeinschaft in Lothringen</p>
+      <p>Volksdeutsche Bewegung in Luxemburg</p>
+      <p>Kärntner Volksbund e. V.</p>
+      <p>Opferring im Elsaß</p>
+      <p>Volksbund für das Deutschtum im Ausland</p>
+      <p>Reichsluftschutzbund</p>
+      <p>Kyffhäuser-Stiftung</p>
+      <p>Parteiforum Weimar</p>
+      <p>Reichsbund Deutsche Familie</p>
+      <p>Stillhaltekommissar Ostmark</p>
+      <p>Stillhaltekommissar Sudetenland</p>
+      <p>Stillhaltekommissar Elsaß</p>
+      <p>Stillhaltekommissar Lothringen</p>
+      <p>Stillhaltekommissar Luxemburg</p>
+      <p>Aufbaufonds GmbH</p>
+      <p>Heimattreue Front Eupen-Malmedy</p>
+      <p>Steirischer Heimatbund e. V.</p>
+      <p>Anhalt-Dank-Stiftung Dessau</p>
+      <p>NS-Schulungsverein Schwerin</p>
+      <p>Vereinigung Stedingsehre e. V., Bookholzberg</p>
+      <p>Ostmark-Selbsthilfe GmbH, Bayreuth</p>
+      <p>Lebensborn e. V.</p>
+      <p>Deutsches Jugendherbergswerk</p>
+      <p>Deutsche Gemeinschaft im Generalgouvernement</p>
+      <p>Reichsbeauftragter für die Altmaterialerfassung</p>
+      <p>Verein zur Pflege des deutschen Volkstums in Böhmen und Mähren</p>
+      <p>Erholungsheime Verwaltungs-GmbH, Berlin</p>
+      <p>Tag der Deutschen Kunst</p>
+      <p>Gemeinschaft "Das Ahnenerbe"</p>
+      <p>Reichstagsfraktion der NSDAP</p>
+      <p>Deutsches Frauenwerk</p>
+      <p>Durch Verwaltungsmitteilung vom 1. Oktober 1940 erhob der Reichsschatzmeister das bisherige Amt für Mitgliedschaftswesen zum Hauptamt unter der Bezeichnung Hauptmitgliedschaftsamt. </p>
+      <p>Mit Bekanntgabe 14/41 vom 5. August 1941 geschah die Umbenennung des ,Hauptamts VII - Hilfskasse - mit Wirkung vom 1. Juli 1941 in Hauptamt VII - Sozialamt -.</p>
+      <p>Durch Entschließung vom 22. Mai 1942 verfügte der Reichsschatzmeister, dass das Mitgliedschaftswesen, wieder in das Hauptamt V eingegliedert wurde.</p>
+      <p>Die Auflösung des Hauptamtes II - Reichshaushaltsamt - erfolgte zum 1. Juli 1943. Das Aufgabengebiet des bisherigen Hauptamtes II ging in die Hauptämter I und VI eingegliedert. Der bisherige Leiter des Hauptamtes II, Willi Damson wurde zum Beauftragten in Volkstumsfragen nach Berlin berufen.</p>
+    </bioghist>
+    <processinfo encodinganalog="Bearbeitungshinweise">
+      <p>Online-Findbuch (2011)</p>
+    </processinfo>
+    <controlaccess>
+      <subject>Norddeutscher Bund und Deutsches Reich (1867/1871-1945)</subject>
+      <subject>Einrichtungen der NSDAP</subject>
+      <subject>Reichsleitung</subject>
+    </controlaccess>
+    <processinfo>
+      <p>this fonds was selected by EHRI from their holding
+                                                guide, based on date range and subject</p>
+    </processinfo>
+  </archdesc>
+</ead>

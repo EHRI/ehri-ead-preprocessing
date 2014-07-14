@@ -1,10 +1,12 @@
 package eu.ehri.leave_only_one_identifier;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -123,12 +125,20 @@ public class ExactlyOneMainIdentifier {
                     writer.add(event);
                     if(event.asStartElement().getName().getLocalPart().equals("eadid")) {
                         event = xmlEventReaderEAD.nextEvent();
-                        eadid = event.asCharacters().getData() + "_";
-                        //the agreement is to append #LANGUAGE to the eadid, to be able to create multiple language descriptions. 
-                        //the eadid leading up to the # should be the same for two descriptions of the same documentaryUnit
-                        if(eadid.indexOf("#") > 0){
-                            eadid = eadid.substring(0, eadid.indexOf("#")) + "_";
+                        if (event.isCharacters()) {
+                            eadid = event.asCharacters().getData();
+                            //the agreement is to append #LANGUAGE to the eadid, to be able to create multiple language descriptions. 
+                            //the eadid leading up to the # should be the same for two descriptions of the same documentaryUnit
+                            if (eadid.indexOf("#") > 0) {
+                                eadid = eadid.substring(0, eadid.indexOf("#"));
+                            }
+                        }else{
+                            File file = new File(eadfile);
+                            int suffixPos = file.getName().indexOf(".");
+                            eadid=file.getName().substring(0, suffixPos);
+                            System.out.println("no eadid given, made one up from the filename: " + eadid);
                         }
+                        eadid += "_";
                         writer.add(event);
                     } else
                     if (event.asStartElement().getName().getLocalPart().equals("revisiondesc")) {
