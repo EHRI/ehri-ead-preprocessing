@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:isbn:1-931666-22-9" xmlns:ead="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <eadheader>
+        <eadid countrycode="IL">Terezin Memorial</eadid>
+        <filedesc>
+            <titlestmt>
+                <titleproper>Terezin Memorial Files in the EHRI Terezin Research Guide</titleproper>
+            </titlestmt>
+        </filedesc>
+        <profiledesc>
+            <creation>
+                <date>2014-03-27</date>
+            </creation>
+            <langusage>
+                <language scriptcode="Latn" langcode="mul">Multiple languages</language>
+            </langusage>
+        </profiledesc>
+        <revisiondesc>
+<change>
+<date>2014/07/14 16:26:52</date>
+<item>EHRI added a unitid with label "ehri_internal_identifier" to give every node a unique id.</item>
+</change>
+<change>
+<date>2014-07-14 16:22:34</date>
+<item>EHRI added a unitid with label "ehri_structure" to indicate the structure of the EAD file on every c-node. This is done to make comparisons of two versions of the same EAD (as indicated by the eadid) possible.</item>
+</change>
+
+            <change>
+                <date>2014-07-06T14:09:10.384+03:00</date>
+                <item> EHRI extracted the content of the first paragraph of the field scopecontent and used it as unittitle for the cases in which
+                    this field was empty. </item>
+            </change>
+        </revisiondesc>
+    </eadheader>
+    <frontmatter></frontmatter>
+    <archdesc level="recordgrp">
+        <did>
+<unitid label="ehri_internal_id">0</unitid>
+<unitid label="ehri_structure">0</unitid>
+            <unitid>výtvarná sbírka</unitid>
+            <unittitle>Works of Art</unittitle>
+            <abstract> Oficiální (pro SS a potřeby terezínské samosprávy) a především neoficiální tvorba vzniklá činnsotí vězněných terezínských
+                umělců. </abstract>
+        </did>
+        <ead:dsc>
+            <ead:c01 level="item">
+                <did>
+<unitid label="ehri_internal_id">1</unitid>
+<unitid label="ehri_structure">0.0</unitid>
+                    <unittitle label="ehri_title">Lidé tlačící vůz</unittitle>
+                    <unitid>PT 10</unitid>
+                </did>
+                <scopecontent>
+                    <p>Lidé tlačící vůz</p>
+                </scopecontent>
+                <scopecontent>
+                    <p>People pulling a cart</p>
+                </scopecontent>
+                <controlaccess>
+                    <persname authfilenumber="PERSON.ITI.1935857" source="terezin-victims">Ungar, Otto (* 27.11.1901)</persname>
+                    <geogname authfilenumber="PLACE.JMP.12" source="terezin-places">Sudetenkaserne/E I</geogname>
+                </controlaccess>
+            </ead:c01>
+        </ead:dsc>
+    </archdesc>
+</ead>

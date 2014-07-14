@@ -21,7 +21,7 @@ public class AddMainIdentifierTest {
 //        System.out.println(url);
         StringWriter writer = new StringWriter();
         UseUNITID_Tag.use_unitid_tag(url.getPath(), "label", "Identificatie:", writer);
-//        System.out.println(writer.toString());
+        System.out.println(writer.toString());
         assertTrue(writer.toString().contains("<unitid label=\"ehri_main_identifier\">AA 2249</unitid>"));
     }
 
@@ -46,6 +46,7 @@ public class AddMainIdentifierTest {
         assertTrue(writer.toString().contains("<unitid label=\"ehri_internal_id\">0</unitid>"));
         assertTrue(writer.toString().contains("<unitid type=\"bestellnummer\">R 2 8687</unitid>"));
         assertTrue(writer.toString().contains("<unitid label=\"ehri_main_identifier\">R 2 8687</unitid>"));
+        assertFalse(writer.toString().contains("<unittitle><unittitle>"));
     }
     @Test
     @Ignore //TODO!
@@ -72,5 +73,18 @@ public class AddMainIdentifierTest {
         System.out.println(writer.toString());
         assertTrue(writer.toString().contains("<unitid type=\"refcode\">DE ITS [OuS 1.1.7]</unitid>"));
         assertTrue(writer.toString().contains("<unitid label=\"ehri_main_identifier\">DE ITS [OuS 1.1.7]</unitid>"));
+    }
+    
+    @Test
+    public void noUnittitleAfterUnitid() throws Exception {
+        URL url = ClassLoader.getSystemResource("unittitles.xml");
+//        System.out.println(url);
+        StringWriter writer = new StringWriter();
+        UseUNITID_Tag.use_unitid_tag(url.getPath(), null, null, writer);
+        System.out.println(writer.toString());
+        assertTrue(writer.toString().contains("<unitid label=\"ehri_main_identifier\">výtvarná sbírka</unitid>"));
+        assertTrue(writer.toString().contains("<unitid label=\"ehri_main_identifier\">PT 10</unitid>"));
+        assertFalse(writer.toString().contains("<unitid label=\"ehri_main_identifier\">0.0</unitid>"));
+        assertFalse(writer.toString().contains("<did><did>"));
     }
 }

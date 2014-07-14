@@ -68,9 +68,15 @@ public class UseUNITID_Tag {
         while (xmlEventReaderEAD.hasNext()) {
 
             XMLEvent event = xmlEventReaderEAD.nextEvent();
-            writer.add(event);
+            /** i'd prefer to keep the writer.add(event) close to the nextEvent() call. 
+              * however, if this is the did end-tag, we want to add the main-identifier before, so we cannot write it yet
+              * every block below MUST have its own writer.add(event) call
+              * and if there is a nextEvent, the writer.add(event) SHOULD be next to it
+             **/
 
             if (event.isStartElement()) {
+                writer.add(event);
+
                 if (event.asStartElement().getName().getLocalPart().equals("revisiondesc")) {
                     writer.add(end);
                     writer.add(eventFactory.createStartElement("", null, "change"));
@@ -88,49 +94,60 @@ public class UseUNITID_Tag {
                     writer.add(end);
                     writer.add(eventFactory.createEndElement("", null, "change"));
                 }
-            }
 
-            if (event.isStartElement()) {
                 if (event.asStartElement().getName().getLocalPart().equals("unitid")) {
                     @SuppressWarnings("unchecked")
                     Iterator<Attribute> attributes = event.asStartElement().getAttributes();
 
                     event = xmlEventReaderEAD.nextEvent();
+                    writer.add(event);
                     if (unitidAttribute != null && unitidAttributeValue != null && !unitidAttribute.isEmpty() && !unitidAttributeValue.isEmpty()) {
                         while (attributes.hasNext()) {
                             Attribute attribute = attributes.next();
                             //for unitidAttribute && unitidAttributeValue given
                             if (attribute.getName().toString().equals(unitidAttribute)) {
                                 String type = attribute.getValue().toString();
-
-                                writer.add(event);
                                 if (event instanceof Characters) {
                                     if (type.equals(unitidAttributeValue)) {
                                         value = event.asCharacters().toString();
                                         kind_of_unitid = ATTRVALUE;
-                                        event = xmlEventReaderEAD.nextEvent();
-                                        writer.add(event);
                                     }
                                 }
                             }
                         }
                     }
                     if (kind_of_unitid == null || kind_of_unitid.equals(NOATTR)) {
-                        if (event instanceof Characters) {
+                        boolean isEhriCreatedIdentifier = false;
+                        while (attributes.hasNext()) {
+                            Attribute attribute = attributes.next();
+                            if (attribute.getName().toString().equals("label") && attribute.getValue().toString().startsWith("ehri_")) {
+                                isEhriCreatedIdentifier = true;
+                            }
+                        }
+                        if ((!isEhriCreatedIdentifier) && event instanceof Characters) {
                             value = event.asCharacters().toString();
                             kind_of_unitid = NOATTR;
-                            writer.add(event);
-                            event = xmlEventReaderEAD.nextEvent();
-                            writer.add(event);
                         }
                     }
                 }
-            }
+            } else {
+                //only add the unitid at this point if the value has been set, and not yet been processed:
+                if (event.isEndElement() && value != null && (!value.isEmpty())) {
+                    if (ATTRVALUE.equals(kind_of_unitid)) {
+                        if (event.asEndElement().getName().getLocalPart().equals("unitid")) {
+                            //write the close </unitid> first, then create the new one
+                            writer.add(event);
 
-            //only add the unitid at this point if the value has been set, and not yet been processed:
-            if (event.isEndElement() && value != null && (!value.isEmpty())) {
-                if (ATTRVALUE.equals(kind_of_unitid)) {
-                    if (event.asEndElement().getName().getLocalPart().equals("unitid")) {
+                            writer.add(end);
+                            writer.add(eventFactory.createStartElement("", null, "unitid"));
+                            writer.add(eventFactory.createAttribute("label", "ehri_main_identifier"));
+                            writer.add(eventFactory.createCharacters(value));
+                            writer.add(eventFactory.createEndElement("", null, "unitid"));
+                            writer.add(end);
+
+                            resetMainIdValues();
+                        }
+                    } else if (event.asEndElement().getName().getLocalPart().equals("did")) {
                         writer.add(end);
                         writer.add(eventFactory.createStartElement("", null, "unitid"));
                         writer.add(eventFactory.createAttribute("label", "ehri_main_identifier"));
@@ -138,20 +155,17 @@ public class UseUNITID_Tag {
                         writer.add(eventFactory.createEndElement("", null, "unitid"));
                         writer.add(end);
 
+                        //write the close </did> last
+                        writer.add(event);
+
                         resetMainIdValues();
+                    }else{
+                      // not the closing did, and the given attribute has not been detected yet 
+                      writer.add(event);                      
                     }
                 } else {
-
-                    if (event.asEndElement().getName().getLocalPart().equals("unittitle")) {
-                        writer.add(end);
-                        writer.add(eventFactory.createStartElement("", null, "unitid"));
-                        writer.add(eventFactory.createAttribute("label", "ehri_main_identifier"));
-                        writer.add(eventFactory.createCharacters(value));
-                        writer.add(eventFactory.createEndElement("", null, "unitid"));
-                        writer.add(end);
-
-                        resetMainIdValues();
-                    }
+                    //not an end-tag, or we have not yet found the main-identifier
+                    writer.add(event);
                 }
             }
         }
