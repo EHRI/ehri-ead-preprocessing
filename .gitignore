@@ -1,0 +1,20 @@
+nb-configuration.xml
+nbactions.xml
+*.class
+*.pyc
+*.java.orig
+*.xml.orig
+*.~lock.*#
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Ignore target
+**/target/*
+
+# Intellij
+*.iml
+.idea
+
