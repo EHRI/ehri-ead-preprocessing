@@ -38,7 +38,6 @@ public class RelativizeIdentifiersTest {
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/did/unitid").evaluate(outDoc));
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/did/unitid").evaluate(outDoc));
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/c03/did/unitid").evaluate(outDoc));
-        assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/c03/did/unitid").evaluate(outDoc));
         assertEquals("2", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/did/unitid").evaluate(outDoc));
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/c03/did/unitid").evaluate(outDoc));
         assertEquals("2 root 1 2", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/c03[2]/did/unitid").evaluate(outDoc));
@@ -49,7 +48,6 @@ public class RelativizeIdentifiersTest {
         Document outDoc = getOutputDocument("/absoluteids-hyphens.xml");
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/did/unitid").evaluate(outDoc));
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/did/unitid").evaluate(outDoc));
-        assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/c03/did/unitid").evaluate(outDoc));
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/c03/did/unitid").evaluate(outDoc));
         assertEquals("2", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/did/unitid").evaluate(outDoc));
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/c03/did/unitid").evaluate(outDoc));
@@ -65,6 +63,16 @@ public class RelativizeIdentifiersTest {
         assertEquals("a", xpath.compile("/ead/archdesc/dsc/c01[1]/c02[1]/c03[1]/c04[1]/did/unitid").evaluate(outDoc));
         assertEquals("028", xpath.compile("/ead/archdesc/dsc/c01[1]/c02[1]/c03[1]/c04[1]/c05[1]/did/unitid").evaluate
                 (outDoc));
+    }
+
+    @Test
+    public void testRelativizeIdentifiersAlreadyRelative() throws Exception {
+        Document outDoc = getOutputDocument("/relativeids.xml");
+        assertEquals("c1", xpath.compile("/ead/archdesc/dsc/c01/did/unitid").evaluate(outDoc));
+        assertEquals("c2-1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/did/unitid").evaluate(outDoc));
+        assertEquals("c3-1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/c03/did/unitid").evaluate(outDoc));
+        assertEquals("c2-2", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/did/unitid").evaluate(outDoc));
+        assertEquals("c3-1", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/c03/did/unitid").evaluate(outDoc));
     }
 
     private Document getOutputDocument(String resourceName) throws URISyntaxException, XMLStreamException,
