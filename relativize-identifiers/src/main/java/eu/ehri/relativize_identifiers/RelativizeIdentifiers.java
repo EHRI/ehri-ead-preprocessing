@@ -56,10 +56,9 @@ public class RelativizeIdentifiers {
         XMLEventReader xmlEventReaderEAD = XMLInputFactory.newInstance().createXMLEventReader(fileInputStreamEAD);
         while (xmlEventReaderEAD.hasNext()) {
             XMLEvent event = xmlEventReaderEAD.nextEvent();
-
+            writer.add(event);
             if (event.isStartElement()) {
                 if (event.asStartElement().getName().getLocalPart().equals("unitid")) {
-                    writer.add(event);
                     XMLEvent nextEvent = xmlEventReaderEAD.nextEvent();
                     if (nextEvent.isCharacters()) {
                         thisId = nextEvent.asCharacters().getData();
@@ -68,7 +67,6 @@ public class RelativizeIdentifiers {
                             // colons, or dashes.
                             String regex = "^" + Pattern.quote(idStack.peek()) + "[\\s\\-:_\\/]*";
                             String newId = thisId.replaceFirst(regex, "");
-                            System.out.println("ID: " + thisId + " -> " + newId);
                             Characters chars = eventFactory.createCharacters(newId);
                             writer.add(chars);
                         } else {
@@ -76,17 +74,12 @@ public class RelativizeIdentifiers {
                         }
                         idStack.push(thisId);
                     }
-                } else {
-                    writer.add(event);
                 }
             } else if (event.isEndElement()) {
                 if (event.asEndElement().getName().getLocalPart()
                         .matches(childPattern.pattern())) {
                     idStack.pop();
                 }
-                writer.add(event);
-            } else {
-                writer.add(event);
             }
         }
 
