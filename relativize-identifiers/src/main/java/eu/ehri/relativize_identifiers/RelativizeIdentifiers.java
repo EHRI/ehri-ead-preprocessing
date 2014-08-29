@@ -66,8 +66,9 @@ public class RelativizeIdentifiers {
                         if (!idStack.empty() && thisId.contains(idStack.peek())) {
                             // Replace the ID and any non-ID trailing chars, such as spaces,
                             // colons, or dashes.
-                            String regex = "^" + Pattern.quote(idStack.peek()) + "[\\s\\-:_]*";
+                            String regex = "^" + Pattern.quote(idStack.peek()) + "[\\s\\-:_\\/]*";
                             String newId = thisId.replaceFirst(regex, "");
+                            System.out.println("ID: " + thisId + " -> " + newId);
                             Characters chars = eventFactory.createCharacters(newId);
                             writer.add(chars);
                         } else {

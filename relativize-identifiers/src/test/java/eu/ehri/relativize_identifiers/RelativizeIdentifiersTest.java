@@ -41,6 +41,7 @@ public class RelativizeIdentifiersTest {
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/c03/did/unitid").evaluate(outDoc));
         assertEquals("2", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/did/unitid").evaluate(outDoc));
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/c03/did/unitid").evaluate(outDoc));
+        assertEquals("2 root 1 2", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/c03[2]/did/unitid").evaluate(outDoc));
     }
 
     @Test
@@ -52,6 +53,18 @@ public class RelativizeIdentifiersTest {
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[1]/c03/did/unitid").evaluate(outDoc));
         assertEquals("2", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/did/unitid").evaluate(outDoc));
         assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01/c02[2]/c03/did/unitid").evaluate(outDoc));
+    }
+
+    @Test
+    public void testRelativizeIdentifiersWithSlashes() throws Exception {
+        Document outDoc = getOutputDocument("/wp2_jmp_ead.xml");
+        assertEquals("COLLECTION.JMP.SHOAH/T", xpath.compile("/ead/archdesc/did/unitid").evaluate(outDoc));
+        assertEquals("2", xpath.compile("/ead/archdesc/dsc/c01[1]/did/unitid").evaluate(outDoc));
+        assertEquals("A", xpath.compile("/ead/archdesc/dsc/c01[1]/c02[1]/did/unitid").evaluate(outDoc));
+        assertEquals("1", xpath.compile("/ead/archdesc/dsc/c01[1]/c02[1]/c03[1]/did/unitid").evaluate(outDoc));
+        assertEquals("a", xpath.compile("/ead/archdesc/dsc/c01[1]/c02[1]/c03[1]/c04[1]/did/unitid").evaluate(outDoc));
+        assertEquals("028", xpath.compile("/ead/archdesc/dsc/c01[1]/c02[1]/c03[1]/c04[1]/c05[1]/did/unitid").evaluate
+                (outDoc));
     }
 
     private Document getOutputDocument(String resourceName) throws URISyntaxException, XMLStreamException,
