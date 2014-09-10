@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<!--
+//*****************************************************************************
+// Pre-process EAD files from the Wiener Library to join values from <emph> 
+// elements within access points.
+//
+// Distributed under the GNU General Public Licence
+//*****************************************************************************
+-->
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  version="2.0">
+  <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"/>
+  <xsl:output encoding="UTF-8"/>
+
+
+  <xsl:template match="/">
+      <!-- 
+<xsl:variable name="filename" select="concat('converted/', $recordtype , '/' , field[@name = 'id'] , '.xml')" />
+      <xsl:result-document href="{$filename}" method="xml">
+ -->
+        <xsl:apply-templates />
+<!--       </xsl:result-document> -->
+      
+  </xsl:template>
+  
+  <xsl:template match="persname[emph]">
+      <persname><xsl:apply-templates select="emph" /></persname>
+  </xsl:template>
+  
+  <xsl:template match="emph[parent::*[name() != 'p']]">
+      <xsl:value-of select="./normalize-space()" />
+      <xsl:if test="position()!=last()">, </xsl:if>
+  </xsl:template>
+  
+  <!-- 
+<xsl:template match="text()" priority="1.0">
+        <xsl:value-of select="./normalize-space()"/>
+  </xsl:template>
+ -->
+  
+  <!-- remove empty subject -->
+  <xsl:template match="subject[not(node())]"/>
+  
+  <xsl:template match="node()|@*">
+    <xsl:copy>
+        <xsl:apply-templates select="node()|@*" />
+    </xsl:copy>
+  </xsl:template>
+</xsl:stylesheet>
