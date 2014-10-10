@@ -14,13 +14,34 @@
 
 
   <xsl:template match="/">
-      <!-- 
-<xsl:variable name="filename" select="concat('converted/', $recordtype , '/' , field[@name = 'id'] , '.xml')" />
-      <xsl:result-document href="{$filename}" method="xml">
- -->
         <xsl:apply-templates />
-<!--       </xsl:result-document> -->
-      
+  </xsl:template>
+  
+  <!-- Add provenance describing the changes -->
+  <xsl:template match="eadheader/revisiondesc">
+      <revisiondesc>
+          <xsl:call-template name="add-change" />
+          <xsl:apply-templates />
+      </revisiondesc>
+  </xsl:template>
+  
+  <xsl:template match="eadheader[not(revisiondesc)]">
+      <eadheader><xsl:copy-of select="@*"/>
+      <xsl:apply-templates />
+      <revisiondesc>
+          <xsl:call-template name="add-change" />
+      </revisiondesc>
+      </eadheader>
+  </xsl:template>
+  
+  <xsl:template name="add-change">
+    <xsl:variable name="convertdate" select="current-date()" />
+    <change>
+      <date><xsl:attribute name="normal" select="format-date($convertdate, '[Y0001]-[M01]-[D01]')" /></date>
+      <item>If there were any emph elements inside elements other than p, the emph tags have been stripped by EHRI's preprocessing tool.
+      For example, &lt;emph altrender="firstname"&gt;Ben&lt;/emph&gt; became Ben. Multiple occurrences have been padded with commas. 
+      Empty subject elements have been removed too.</item>
+    </change>
   </xsl:template>
   
   <xsl:template match="persname[emph]">
