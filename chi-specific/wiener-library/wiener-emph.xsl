@@ -44,20 +44,10 @@
     </change>
   </xsl:template>
   
-  <xsl:template match="persname[emph]">
-      <persname><xsl:apply-templates select="emph" /></persname>
-  </xsl:template>
-  
   <xsl:template match="emph[parent::*[name() != 'p']]">
       <xsl:value-of select="./normalize-space()" />
       <xsl:if test="position()!=last()">, </xsl:if>
   </xsl:template>
-  
-  <!-- 
-<xsl:template match="text()" priority="1.0">
-        <xsl:value-of select="./normalize-space()"/>
-  </xsl:template>
- -->
   
   <!-- remove empty subject -->
   <xsl:template match="subject[not(node())]"/>
