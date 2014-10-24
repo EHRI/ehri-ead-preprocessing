@@ -35,9 +35,9 @@
   </xsl:template>
   
   <xsl:template name="add-change">
-    <xsl:variable name="convertdate" select="current-date()" />
+    <xsl:variable name="convertdate" select="fn:current-dateTime()" />
     <change>
-      <date><xsl:attribute name="normal" select="format-date($convertdate, '[Y0001]-[M01]-[D01]')" /></date>
+      <date><xsl:attribute name="normal" select="format-dateTime($convertdate, '[Y0001]-[M01]-[D01]')" /><xsl:value-of select="format-dateTime($convertdate, '[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]')" /></date>
       <item>If there were any emph elements inside elements other than p, the emph tags have been stripped by EHRI's preprocessing tool.
       For example, &lt;emph altrender="firstname"&gt;Ben&lt;/emph&gt; became Ben. Multiple occurrences have been padded with commas. 
       Empty subject elements have been removed too.</item>
