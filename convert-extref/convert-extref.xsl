@@ -1,20 +1,21 @@
 <?xml version='1.0'?>
 <!--
 //*****************************************************************************
-// Pre-process EAD files from the Wiener Library to join values from <emph> 
-// elements within access points.
+// Pre-process EAD files to convert <extref href="url"> to MarkDown.
 //
 // Distributed under the GNU General Public Licence
 //*****************************************************************************
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fn="http://www.w3.org/2005/xpath-functions"
   version="2.0">
   <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"/>
   <xsl:output encoding="UTF-8"/>
 
 
   <xsl:template match="/">
+      
         <xsl:apply-templates />
+      
   </xsl:template>
   
   <!-- Add provenance describing the changes -->
@@ -38,19 +39,14 @@
     <xsl:variable name="convertdate" select="fn:current-dateTime()" />
     <change>
       <date><xsl:attribute name="normal" select="format-dateTime($convertdate, '[Y0001]-[M01]-[D01]')" /><xsl:value-of select="format-dateTime($convertdate, '[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]')" /></date>
-      <item>If there were any emph elements inside elements other than p, the emph tags have been stripped by EHRI's preprocessing tool.
-      For example, &lt;emph altrender="firstname"&gt;Ben&lt;/emph&gt; became Ben. Multiple occurrences have been padded with commas. 
-      Empty subject elements have been removed too.</item>
+      <item>If there were any, EAD element extref inside accessrestrict elements have been converted to their Markdown equivalents by EHRI's preprocessing tool. 
+      For example: &lt;extref href="http://example.com"&gt;some text&lt;/extref&gt; becomes [some text](http://example.com).</item>
     </change>
   </xsl:template>
   
-  <xsl:template match="emph[parent::*[name() != 'p']]">
-      <xsl:value-of select="./normalize-space()" />
-      <xsl:if test="position()!=last()">, </xsl:if>
+  <xsl:template match="accessrestrict/p/extref[@href]">
+      <xsl:value-of select="concat('[', normalize-space(.), ']', '(', ./@href, ')')" />
   </xsl:template>
-  
-  <!-- remove empty subject -->
-  <xsl:template match="subject[not(node())]"/>
   
   <xsl:template match="node()|@*">
     <xsl:copy>
