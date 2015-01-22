@@ -19,7 +19,7 @@ import javax.xml.stream.events.XMLEvent;
 
 public class LookForHead {
 
-	public static boolean hasHeadTag(String eadfile) throws FileNotFoundException, XMLStreamException, FactoryConfigurationError{
+	public static boolean hasHeadTag(String eadfile) throws FileNotFoundException, XMLStreamException, FactoryConfigurationError {
 		boolean result = false;
 		
 		FileInputStream fileInputStreamEAD = new FileInputStream(eadfile);

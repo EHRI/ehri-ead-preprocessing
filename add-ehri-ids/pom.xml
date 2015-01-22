@@ -4,7 +4,7 @@
 
 	<groupId>eu.ehri</groupId>
 	<artifactId>add_ehri_ids_to_ead_nodes</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.9</version>
 	<packaging>jar</packaging>
 
 	<name>add_ehri_ids_to_ead_nodes</name>

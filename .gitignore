@@ -11,10 +11,57 @@ nbactions.xml
 *.war
 *.ear
 
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
 # Ignore target
 **/target/*
 
-# Intellij
-*.iml
+Intellij
+*iml
 .idea
 
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+
+neo4j-community-1.9*
+
+# Ignore test data folder
+testdata
+
+# let devs have their own test logback
+logback-test.xml

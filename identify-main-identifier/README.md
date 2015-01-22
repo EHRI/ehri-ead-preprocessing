@@ -35,3 +35,9 @@ java -jar identify_main_identifier-0.0.1-SNAPSHOT-jar-with-dependencies.jar eadf
 ```
 
 As output you will get a file called *eadfile_ehriID.xml*
+
+To use the pre-processor on a folder of EAD files, e.g. `input_folder`, run:
+
+```
+  $ ./identify-all.sh input_folder
+```
