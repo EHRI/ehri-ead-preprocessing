@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/EHRI/ehri-ead-preprocessing.svg?branch=master)](https://travis-ci.org/EHRI/ehri-ead-preprocessing)
+
 ehri-ead-preprocessing
 ======================
 
