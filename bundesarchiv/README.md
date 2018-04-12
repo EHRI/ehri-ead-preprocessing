@@ -16,7 +16,7 @@ considered.
 In particular, the `<did>` directly below `<archdesc>` is not taken into
 account.
 
-A proper <unitid> element has an attribute `type` with value `call number`.
+A proper `<unitid>` element has an attribute `type` with value `call number`.
 
 If such a `<unitid>` is missing, a fresh one will be generated and inserted as
 first element in the parent `<did>`.
@@ -38,10 +38,10 @@ python3 {scriptPath}/moveId.py {prePath} {postPath}
 
 Here
 
-*   {scriptPath} is the path leading to the place where `moveId.py` exists on the
+*   `{scriptPath}` is the path leading to the place where `moveId.py` exists on the
     server;
-*   {prePath} is the full path name of the incoming EAD file;
-*   {postPath} is the full path name of the outgoing EAD file.
+*   `{prePath}` is the full path name of the incoming EAD file;
+*   `{postPath}` is the full path name of the outgoing EAD file.
 
 Details
 -------
@@ -52,6 +52,6 @@ LTS distribution.
 It is assumed that the input EAD exists as a file on disk. The output will also
 be generated as a file on disk.
 
-It is assumed that the calling process knows what to use for {scriptPath},
-{prePath} and {postPath}.
+It is assumed that the calling process knows what to use for `{scriptPath}`,
+`{prePath}` and `{postPath}`.
 
