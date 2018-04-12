@@ -3,6 +3,11 @@
 Bundesarchiv
 ============
 
+Author
+------
+
+Dirk Roorda (DANS) dirk.roorda@dans.knaw.nl
+
 Description of the transformation
 ---------------------------------
 
