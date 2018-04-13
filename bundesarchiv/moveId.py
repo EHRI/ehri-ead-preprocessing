@@ -1,5 +1,6 @@
 import sys
 import xml.etree.ElementTree as ET
+import os
 
 NS = 'urn:isbn:1-931666-22-9'
 EMI = 'ehri_main_identifier'
@@ -8,6 +9,14 @@ EA = '3.1.1'
 ET.register_namespace('', NS)
 
 DEBUG = False
+
+def make_dir(filename):
+    if not os.path.exists(os.path.dirname(filename)):
+        try:
+            os.makedirs(os.path.dirname(filename))
+        except OSError as exc: # Guard against race condition
+            if exc.errno != errno.EEXIST:
+                raise
 
 
 def moveId(fileIn, fileOut):
@@ -40,6 +49,7 @@ def moveId(fileIn, fileOut):
         print(
             '\t{:<4} x <did> with multiple identifiers'.format(len(didMultId))
         )
+    make_dir(fileOut)
     tree.write(fileOut, encoding='unicode', xml_declaration=True)
 
 
