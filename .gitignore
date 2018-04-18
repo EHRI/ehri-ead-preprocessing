@@ -65,3 +65,9 @@ testdata
 
 # let devs have their own test logback
 logback-test.xml
+
+# Build directories #
+#####################
+_temp/
+__pycache__/
+.ipynb_checkpoints/
