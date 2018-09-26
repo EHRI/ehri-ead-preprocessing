@@ -238,7 +238,7 @@ def harvestTask(repoTask):
           docId,
           meta,
       )
-      docDest = '{}/{}'.format(setDest, docId.replace(':', '-'))
+      docDest = '{}/{}.xml'.format(setDest, docId.replace(':', '-'))
       try:
         run(
             COMMAND + (docDest, docUrl)
@@ -294,7 +294,7 @@ def deliver(path):
       if match:
           code = match.group(1)
           msg = match.group(2)
-          error = f'{code}: {msg}'
+          error = '{code}: {msg}'.format(code=code, msg=msg)
       else:
           error = 'Could not parse error message'
   else:
@@ -356,8 +356,8 @@ def main():
       default='',
       help=(
           'path to working directory which is'
-          'the starting point of a relative config path'
-          'and the starting point of a relative output path'
+          ' the starting point of a relative config path'
+          ' and the starting point of a relative output path'
       ),
   )
   parser.add_argument(
@@ -372,7 +372,7 @@ def main():
       default=0,
       help=(
           'print errors, messages, verbose messages.'
-          'Repeat the option to increase verbosity.'
+          ' Repeat the option to increase verbosity.'
       ),
   )
   args = parser.parse_args()
