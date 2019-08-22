@@ -1,0 +1,44 @@
+<ead>
+    <eadheader>
+
+    </eadheader>
+    <archdesc>
+        <did>
+            <unitid>root</unitid>
+        </did>
+        <dsc type="combined">
+            <c01>
+                <did>
+                    <unitid>root 1</unitid>
+                </did>
+                <c02>
+                    <did>
+                        <unitid>root 1 1</unitid>
+                    </did>
+                    <c03>
+                        <did>
+                            <unitid>root 1 1 1</unitid>
+                        </did>
+                    </c03>
+                </c02>
+                <c02>
+                    <did>
+                        <unitid>root 1 2</unitid>
+                    </did>
+                    <c03>
+                        <did>
+                            <unitid>root 1 2 1</unitid>
+                        </did>
+                    </c03>
+                    <c03>
+                        <did>
+                            <!-- Ensure an ID with it's parent ID repeated somewhere
+                                 other than the start doesn't get munged. -->
+                            <unitid>root 1 2 2 root 1 2</unitid>
+                        </did>
+                    </c03>
+                </c02>
+            </c01>
+        </dsc>
+    </archdesc>
+</ead>
